@@ -6,5 +6,5 @@ def fizzbuzz():
         if not(i % 5):
             print("Buzz", end="")
         if i % 3 and i % 5:
-            print(i, end="")
+            print("{} ".format(int(i)), end="")
         print(" ", end="")
