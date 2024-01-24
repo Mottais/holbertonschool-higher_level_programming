@@ -1,7 +1,24 @@
 #!/usr/bin/python3
-
 if __name__ != "__main__":
-    exit(0)
-print("a")
-exit(0)
-print("b")
+    exit
+
+from sys import argv
+if len(argv) != 4:
+    print("./100-my_calculator.py <a> <operator> <b>")
+    exit(1)
+
+from calculator_1 import add, sub, div, mul
+a, op, b = int(argv[1]), argv[2], int(argv[3])
+
+match op:
+    case "+":
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    case "-":
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    case "/":
+        print("{} / {} = {}".format(a, b, div(a, b)))
+    case "*":
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    case _:
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
