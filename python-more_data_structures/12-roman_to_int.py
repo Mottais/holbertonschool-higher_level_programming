@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
 
     for c in roman_string:
         if prec < roman_int.get(c):
-             roman_value -= 2 * prec
+            roman_value -= 2 * prec
         roman_value += roman_int.get(c)
         prec = roman_int.get(c)
     return roman_value
