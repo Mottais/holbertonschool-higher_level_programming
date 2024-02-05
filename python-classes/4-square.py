@@ -18,9 +18,9 @@ class Square:
     def size(self, value):
         """Set the size of the square."""
         if not type(value) is int:
-            raise Exception("Size must be an integer")
+            raise Exception("size must be an integer")
         if value < 0:
-            raise Exception("Size must be >= 0")
+            raise Exception("size must be >= 0")
         self.__size = value
 
     def area(self):
