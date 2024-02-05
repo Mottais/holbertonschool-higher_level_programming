@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""Contains an class : 'Square'"""
+
 class Square:
     """A class representing a square."""
 
