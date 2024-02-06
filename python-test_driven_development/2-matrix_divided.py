@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """
-this
-is a
-5 line comment
+divide a matrix by div
+retur error if :
+one element is not int or not float
+row of the matrix have not same size
+div is not int or not float
+div = 0
 """
 
 
@@ -12,16 +15,20 @@ def matrix_divided(matrix, div):
     """
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    message = "matrix must be a matrix (list of lists) of integers/floats"
-    new_matrix = [[0.0] * len(matrix[0]) for _ in range(len(matrix))]
-    for row in range(len(matrix)):
-        if len(matrix[row]) != len(matrix[0]):
+
+    new_matrix = []
+    for row in matrix:
+        if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
-        for i in range(len(matrix[0])):
-            if not isinstance(matrix[row][i], (int, float)):
-                raise TypeError(message)
-            new_matrix[row][i] = round(matrix[row][i] / div, 2)
+        new_row = []
+        for value in row:
+            msg = "matrix must be a matrix (list of lists) of integers/floats"
+            if not isinstance(value, (int, float)):
+                raise TypeError(msg)
+            new_row.append(round(value / div, 2))
+        new_matrix.append(new_row)
     return (new_matrix)
