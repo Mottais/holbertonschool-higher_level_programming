@@ -43,7 +43,7 @@ class TestMaxInteger_ZeroDivisionError(unittest.TestCase):
         with self.assertRaises(ZeroDivisionError):
             max_integer([1, 2, 3, 4/0])
 
-''''''
+'''
 class TestMaxInteger_ValueError(unittest.TestCase):
     def test_7_max_liste_ValueError(self):
         with self.assertRaises(ValueError):
