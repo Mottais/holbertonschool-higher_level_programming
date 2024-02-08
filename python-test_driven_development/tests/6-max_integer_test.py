@@ -27,6 +27,18 @@ class TestMaxInteger(unittest.TestCase):
     def test_4_max_liste_of_tuple(self):
         self.assertTrue(max_integer([(1, 3), (1, 2, 1)]) == (1, 3))
 
+
+class TestMaxIntegerWithNonComparableValues(unittest.TestCase):
+    def test_max_integer(self):
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, "3", 4])
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, [3], 4])
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, None, 4])
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, (3, 4), 5])
+
 '''
 class TestMaxInteger_Raise(unittest.TestCase):
 
