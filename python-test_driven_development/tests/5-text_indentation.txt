@@ -1,33 +1,41 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation = __import__("5-text_indentation").text_indentation
 
->>> text_indentation("hello")
-hello
+>>> text_indentation("Hello world")
+Hello world
 
->>> text_indentation(123)
+>>> text_indentation("Hello. world")
+Hello.
+<BLANKLINE>
+world
+
+>>> text_indentation("Hello? world")
+Hello?
+<BLANKLINE>
+world
+
+>>> text_indentation("Hello: world")
+Hello:
+<BLANKLINE>
+world
+
+>>> text_indentation("Hello! world")
+Hello! world
+
+>>> text_indentation(12)
 Traceback (most recent call last):
 TypeError: text must be a string
 
->>> text_indentation("hell:o")
-hell:
+>>> text_indentation("Hello", "World")
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("Hello.       World")
+Hello.
 <BLANKLINE>
-o
+World
 
 >>> text_indentation("")
-
-
-
->>> text_indentation("hell.o")
-hell.
-<BLANKLINE>
-o
-
->>> text_indentation("hell?o")
-hell?
-<BLANKLINE>
-o
-
->>> text_indentation(".")
-.
-<BLANKLINE>
-
-
