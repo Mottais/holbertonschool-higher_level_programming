@@ -54,16 +54,20 @@ class Rectangle:
         return (self.__height + self.__width) * 2
 
     def __str__(self):
-        if self.__height == 0 or self.__width == 0:
-            return ""
-        return ((str(self.print_symbol)*self.__width+'\n')*self.__height)[:-1]
+        string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
+        string += "{}".format(
+            "\n".join([str(self.print_symbol) * self.__width] * self.__height)
+        )
+        return string
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        self.__class__.number_of_instances -= 1
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -79,4 +83,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        return cls(width=size, height=size)
