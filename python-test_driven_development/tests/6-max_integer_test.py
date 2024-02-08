@@ -37,13 +37,13 @@ class TestMaxInteger_TypeError(unittest.TestCase):
         with self.assertRaises(TypeError):
             print(max_integer({8, 2, 1}))
 
-'''
+
 class TestMaxInteger_ZeroDivisionError(unittest.TestCase):
     def test_6_max_liste_ZeroDivisionError(self):
         with self.assertRaises(ZeroDivisionError):
             max_integer([1, 2, 3, 4/0])
 
-
+''''''
 class TestMaxInteger_ValueError(unittest.TestCase):
     def test_7_max_liste_ValueError(self):
         with self.assertRaises(ValueError):
