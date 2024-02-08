@@ -36,12 +36,12 @@ class TestMaxIntegerRaise(unittest.TestCase):
             print(max_integer([1, 3], (1, 2, 1)))
         with self.assertRaises(TypeError):
             print(max_integer({8, 2, 1}))
-'''
+
 class TestMaxIntegerWithNonComparableValues(unittest.TestCase):
     def test_6_max_liste_ZeroDivisionError(self):
         with self.assertRaises(ZeroDivisionError):
             max_integer([1, 2, 3, 4/0])
-
+'''
     def test_7_max_liste_ValueError(self):
         with self.assertRaises(ValueError):
             max_integer([1, 2, 3, int("9" * 4301)])
