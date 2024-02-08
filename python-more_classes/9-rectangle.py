@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-'''
-Module Contains class definition of 'Rectangle'
-'''
+"""
+A class Rectangle that defines a rectangle
+width must be an integer, width need to be less than 0
+height must be an integer, height need to be less than 0
+"""
 
 
 class Rectangle:
-    '''
-    class Rectangle that defines a rectangle
-    '''
+    """definition of 'Rectangle'"""
+
     number_of_instances = 0
     print_symbol = "#"
 
