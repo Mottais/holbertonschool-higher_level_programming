@@ -32,6 +32,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_mid(self):
         self.assertEqual(max_integer([1, 2, 5, 3, 4]), 5)
 
-    def test_7_max_liste_ValueError(self):
+    def test_max_liste_ValueError(self):
         with self.assertRaises(ValueError):
             max_integer([1, 2, 3, int("9" * 4301)])
