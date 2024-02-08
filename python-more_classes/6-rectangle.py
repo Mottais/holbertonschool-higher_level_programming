@@ -17,14 +17,14 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     @property
-    def width(self, value):
+    def width(self):
         """Get the width of the rectangle."""
         return self.__width
 
     @property
-    def height(self, value):
-        """Get the width of the rectangle."""
-        return self.__height
+    def height(self):
+        """Get the height of the rectangle."""
+        return self.__heigh
 
     @width.setter
     def width(self, value):
