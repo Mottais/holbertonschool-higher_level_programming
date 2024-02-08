@@ -5,44 +5,52 @@
 
 import unittest
 
-
 max_integer = __import__('6-max_integer').max_integer
 
 
-class TestMaxInteger(unittest.TestCase):
-    def test_1_max_liste_int(self):
-        self.assertTrue(max_integer([1, 2]) == 2)
-        self.assertTrue(max_integer([-5, -700]) == -5)
-        self.assertTrue(max_integer([77]) == 77)
+class TestMaxIntegerWithIntegers(unittest.TestCase):
+    def test_max_integer(self):
+        self.assertEqual(max_integer([1, 2, 3, 4]), 4)
+        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+        self.assertEqual(max_integer([4, 3, 2, 1]), 4)
+        self.assertEqual(max_integer([1]), 1)
+        self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
         self.assertEqual(max_integer([]), None)
-        self.assertEqual(max_integer(), None)
-        self.assertTrue(max_integer([1, 2, float('inf')]) == float('inf'))
+        self.assertEqual(max_integer([1, 1, 1, 1]), 1)
+        self.assertEqual(max_integer([0, -1, -2, -3]), 0)
+        self.assertEqual(max_integer([1, 0, -1, -2]), 1)
+        self.assertEqual(max_integer([1]*1000), 1)
+        self.assertEqual(max_integer(list(range(1000))), 999)
+        self.assertEqual(max_integer([1, 2, 3.5, 4]), 4)
+        self.assertEqual(max_integer([1, 2, 3, 4]*1000), 4)
+        self.assertEqual(max_integer([1, 2, 3, 4, 5]*0), None)
+        self.assertEqual(max_integer([1, 2, 3, 4, 5]*-1), None)
+        self.assertEqual(max_integer([1, 2, 3, 4, float('inf')]), float('inf'))
+        self.assertEqual(max_integer([1, 2, 3, 4, float('-inf')]), 4)
 
-    def test_2_max_liste_int_float(self):
-        self.assertTrue(max_integer((8.2, 8.22, 1)) == 8.22)
 
-    def test_3_Liste_of_strings(self):
-        self.assertTrue(max_integer(["b", "a", "ba", "aaa"]) == "ba")
+class TestMaxIntegerWithStrings(unittest.TestCase):
+    def test_max_integer(self):
+        self.assertEqual(max_integer(['a', 'b', 'c']), 'c')
+        self.assertEqual(max_integer(['abc', 'bcd', 'cde']), 'cde')
 
-    def test_4_max_liste_of_tuple(self):
-        self.assertTrue(max_integer([(1, 3), (1, 2, 1)]) == (1, 3))
 
-'''
-class TestMaxInteger_Raise(unittest.TestCase):
+class TestMaxIntegerWithTuples(unittest.TestCase):
+    def test_max_integer(self):
+        self.assertEqual(max_integer([(1, 2), (3, 4), (5, 6)]), (5, 6))
 
-    def test_5_max_liste_TypeError(self):
+
+class TestMaxIntegerWithNonComparableValues(unittest.TestCase):
+    def test_max_integer(self):
         with self.assertRaises(TypeError):
             max_integer([1, 2, "3", 4])
         with self.assertRaises(TypeError):
-            print(max_integer([1, 3], (1, 2, 1)))
+            max_integer([1, 2, [3], 4])
         with self.assertRaises(TypeError):
-            print(max_integer({8, 2, 1}))
+            max_integer([1, 2, None, 4])
+        with self.assertRaises(TypeError):
+            max_integer([1, 2, (3, 4), 5])
 
-    def test_6_max_liste_ZeroDivisionError(self):
-        with self.assertRaises(ZeroDivisionError):
-            max_integer([1, 2, 3, 4/0])
 
-    def test_7_max_liste_ValueError(self):
-        with self.assertRaises(ValueError):
-            max_integer([1, 2, 3, int("9" * 4301)])
-'''
+if __name__ == '__main__':
+    unittest.main()
