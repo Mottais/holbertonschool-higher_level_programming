@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-print_square function
-prints a square with the character #.
-Retunr error if :
-size is not in
-size < 0
+matrix_mul function
+function that multiplies 2 matrices m_a an m_b
+If m_a an m_b can’t be multiplied:
+raise a Error exception with a message
 """
 
 
