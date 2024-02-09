@@ -1,0 +1,96 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+
+>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[7, 10], [15, 22]]
+
+
+
+>>> m_a = ([1, 2, 3], [4, 5, 6])
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = ([1, 2], [3, 4], [5, 6])
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+
+
+>>> m_a = [(1, 2, 3), [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [(1, 2), [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+
+>>> m_a = []
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+
+>>> m_a = [["1", 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2], ["3", 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+
+
+>>> m_a = [[1, 2], [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4], [5, 6]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4], [5, 6, 7]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4], [5, 6], [7, 8]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+
+
+
