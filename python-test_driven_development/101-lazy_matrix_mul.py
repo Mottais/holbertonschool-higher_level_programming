@@ -9,6 +9,7 @@ raise a Error exception with a message
 
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
 
     if not isinstance(m_a, list):
