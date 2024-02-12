@@ -8,7 +8,11 @@ raise a Error exception with a message
 
 
 def matrix_mul(m_a, m_b):
-
+    """
+    function that multiplies 2 matrices m_a an m_b
+    If m_a an m_b can’t be multiplied:
+    raise a Error exception with a message
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
