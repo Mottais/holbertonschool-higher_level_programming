@@ -1,5 +1,6 @@
 # Python : Tout est objet
 
+[![Image de présentation](https://github.com/Mottais/holbertonschool-higher_level_programming/blob/main/python-everything_is_object/Python.PNG?raw=true "Image de présentation")](https://github.com/Mottais/holbertonschool-higher_level_programming/blob/main/python-everything_is_object/Python.PNG?raw=true "Image de présentation")
 ## Introduction :
  Python est un langage de programmation populaire et puissant, apprécié pour sa simplicité et sa flexibilité.
 Une caractéristique fondamentale de Python est que tout y est considéré comme un objet.
@@ -17,7 +18,7 @@ print("----------------------")
 print(x.__repr__())
 print(x.__abs__())
 print(x.__add__(10))
-
+ 
   # Output:
 Nombre de bit pour définir : -63 est 6
 ----------------------
@@ -44,7 +45,7 @@ Remarque : x = -63  est l'équivalent à  x = int(-63)
 
 
 ## II )  Identification (id) et Type :
- En Python, chaque objet possède un identifiant unique, accessible via la fonction id().
+ En Python, chaque objet possède un identifiant unique, accessible via la fonction `id()`.
 Cet identifiant est l'adresse mémoire de l'objet.
 Par exemple :
 ```python
@@ -53,7 +54,7 @@ print(id(x)) # Affiche 140455139066224
 
 ```
  Chaque objet a un type, qui définit les opérations possibles sur cet objet et comment il est stocké en mémoire.
-Le type d'un objet peut être obtenu à l'aide de la fonction type().
+Le type d'un objet peut être obtenu à l'aide de la fonction `type()`.
 
 Exemple de création d'une chaine de caracteres :
 ```python
@@ -94,7 +95,7 @@ print(type(comp))  # Affiche <class 'complex'>
 ##### Objets mutables : listes, dictionnaires, ensembles, tableaux d'octets.
 ```python
 mon_dictionnaire = {'a': 1, 'b': 2}
-print(id(mon_dictionnaire), ":", mon_dictionnaire)
+print(id(mon_dictionnaire), ":", mon_dictionnaire) 
 
 mon_dictionnaire['c'] = 3
 print(id(mon_dictionnaire), ":", mon_dictionnaire)
@@ -161,14 +162,14 @@ Cela signifie que la structure de données ne peut pas être modifiée, mais les
 
 ## IV) Assignation vs Référencement :
  En Python, l'assignation crée une référence vers l'objet plutôt que de  copier sa valeur.
-Cela signifie que plusieurs variables peuvent référencer le même objet.
+Cela signifie que plusieurs variables peuvent référencer le même objet. 
 Lorsque plusieurs variables référencent le même objet, elles sont appelées des **alias**.
 Modifier l'objet via l'un de ces **alias** affectera toutes les références.
 
 Par exemple :
 ```python
 a = [1, 2, 3]
-b = a
+b = a  
 b.append(4)
 print(a)  # Affiche [1, 2, 3, 4]
 ```
