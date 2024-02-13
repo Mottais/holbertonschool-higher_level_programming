@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 """
-class MyList that inherits from list
-fonction qui imprime la l'objet trié
+Mododul containt :
+class MyList that inherits list
 """
 
 
 class MyList(list):
-    """fonction qui imprime la l'objet trié"""
+    """
+    class MyList that inherits from list
+    """
     def print_sorted(self):
+        """
+        fonction qui imprime la l'objet trié
+        """
         print(sorted(self))

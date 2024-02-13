@@ -62,5 +62,3 @@ NameError: name 'not_my_list' is not defined
 Traceback (most recent call last):
     ...
 TypeError: '<' not supported between instances of 'dict' and 'int'
-
-
