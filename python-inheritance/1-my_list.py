@@ -1,16 +1,8 @@
 #!/usr/bin/python3
-"""
-Mododul containt :
-class MyList that inherits list
-"""
+"""class using the other class list as a model"""
 
 
 class MyList(list):
-    """
-    class MyList that inherits from list
-    """
+    """addind function to print the sorted list"""
     def print_sorted(self):
-        """
-        fonction qui imprime la l'objet trié
-        """
         print(sorted(self))
