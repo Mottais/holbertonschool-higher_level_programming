@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""Definition of function my_list"""
+"""
+Mododule contenant :
+class MyList MyList qui hérite de la class list
+avec fonction qui imprime l'objet trié
+"""
 
 
 class MyList(list):
-    """Class Mylist with list in inherit"""
-
+    """
+    class qui hérite de la class list
+    """
     def print_sorted(self):
-        """"Function that prints the list, but sorted """
-        for item in self:
-            if not isinstance(item, int):
-                raise TypeError("not all elements in list are integer")
+        """
+        fonction qui imprime l'objet trié
+        """
         print(sorted(self))
