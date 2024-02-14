@@ -11,7 +11,6 @@ class MyList(list):
     avec une méthode supplémentaire
     pour imprimer les éléments triés.
     """
-
     def print_sorted(self):
         """Méthode pour imprimer les éléments
         de la liste triés par ordre croissant.
@@ -22,4 +21,7 @@ class MyList(list):
         Returns:
             Aucun
         """
+        for element in self:
+            if type(element) is not int:
+                raise TypeError("type should be integer")
         print(sorted(self))
