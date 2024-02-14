@@ -16,6 +16,8 @@ class BaseGeometry:
         - est un int
         - et > 0
         """
+        if type(name) is not str:
+            raise TypeError("toto")
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:

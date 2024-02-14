@@ -1,6 +1,11 @@
->>> Base = __import__('7-base_geometry').BaseGeometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> bg = Base()
+>>> bg = BaseGeometry('1')
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry() takes no arguments
+
+>>> bg = BaseGeometry()
 
 >>> bg.integer_validator("age", 49)
 
@@ -23,6 +28,11 @@ TypeError: age must be an integer
 Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
+
+>>> bg.integer_validator(1 , 10)
+Traceback (most recent call last):
+...
+TypeError: toto
 
 >>> bg.integer_validator("age", -49)
 Traceback (most recent call last):
