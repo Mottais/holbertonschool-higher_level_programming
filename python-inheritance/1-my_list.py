@@ -1,17 +1,24 @@
 #!/usr/bin/python3
+"""Ce module définit une classe MyList
+qui hérite de la classe list de Python.
+Cette classe ajoute une méthode supplémentaire
+print_sorted() qui imprime les éléments de la liste triée.
 """
-Mododule contenant :
-class MyList MyList qui hérite de la class list
-avec fonction qui imprime l'objet trié
-"""
-
 
 class MyList(list):
+    """Classe héritant de list
+    avec une méthode supplémentaire
+    pour imprimer les éléments triés.
     """
-    class qui hérite de la class list
-    """
+
     def print_sorted(self):
-        """
-        fonction qui imprime l'objet trié
+        """Méthode pour imprimer les éléments
+        de la liste triés par ordre croissant.
+
+        Args:
+            Aucun
+
+        Returns:
+            Aucun
         """
         print(sorted(self))
