@@ -49,7 +49,7 @@ TypeError: '<' not supported between instances of 'str' and 'int'
 >>> my_list.print_sorted('a')
 Traceback (most recent call last):
 ...
-TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
+TypeError: print_sorted() takes 1 positional argument but 2 were given
 
 >>> not_my_list.print_sorted(not_my_list)
 Traceback (most recent call last):
