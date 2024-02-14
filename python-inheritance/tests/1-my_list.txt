@@ -30,7 +30,7 @@
 >>> nested_list.print_sorted()
 Traceback (most recent call last):
 ...
-TypeError: type should be integer
+TypeError: toto
 
 >>> my_list.append(1/0)
 Traceback (most recent call last):
@@ -46,7 +46,7 @@ TypeError: 'int' object is not iterable
 >>> mixed_list.print_sorted()
 Traceback (most recent call last):
 ...
-TypeError: type should be integer
+TypeError: toto
 
 >>> my_list.print_sorted('a')
 Traceback (most recent call last):
@@ -62,4 +62,4 @@ NameError: name 'not_my_list' is not defined
 >>> invalid_list.print_sorted()
 Traceback (most recent call last):
 ...
-TypeError: type should be integer
+TypeError: toto

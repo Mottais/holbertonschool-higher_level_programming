@@ -23,5 +23,5 @@ class MyList(list):
         """
         for element in self:
             if type(element) is not int:
-                raise TypeError("type should be integer")
+                raise TypeError("toto")
         print(sorted(self))
