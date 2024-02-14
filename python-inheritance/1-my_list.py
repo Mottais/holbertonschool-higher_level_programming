@@ -5,6 +5,7 @@ Cette classe ajoute une méthode supplémentaire
 print_sorted() qui imprime les éléments de la liste triée.
 """
 
+
 class MyList(list):
     """Classe héritant de list
     avec une méthode supplémentaire
