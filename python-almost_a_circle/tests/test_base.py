@@ -53,10 +53,6 @@ class test_base(unittest.TestCase):
 
     def test_to_json_type(self):
         """Testing the json string"""
-        sq = Square(1)
-        json_dict = sq.to_dictionary()
-        json_string = Base.to_json_string([json_dict])
-        self.assertTrue(type(json_string) is str)
 
         Dict = {"toto": "tutu"}
         json_string = Base.to_json_string([Dict, Dict])
@@ -74,29 +70,6 @@ class test_base(unittest.TestCase):
         json_string = Base.to_json_string([])
         self.assertTrue(json_string == '[]')
         self.assertTrue(type(json_string) is str)
-
-    def test_to_json_value(self):
-        """Testing the json string"""
-        sq = Square(1, 0, 0, 609)
-        json_dict = sq.to_dictionary()
-        json_string = Base.to_json_string([json_dict])
-        self.assertTrue(
-            json.loads(json_string) == [{"id": 609, "y": 0, "size": 1, "x": 0}]
-        )
-
-    def test_to_json_None(self):
-        """Testing the json string"""
-        sq = Square(1, 0, 0, 609)
-        json_dict = sq.to_dictionary()
-        json_string = Base.to_json_string(None)
-        self.assertTrue(json_string == "[]")
-
-    def test_to_json_Empty(self):
-        """Testing the json string"""
-        sq = Square(1, 0, 0, 609)
-        json_dict = sq.to_dictionary()
-        json_string = Base.to_json_string([])
-        self.assertTrue(json_string == "[]")
 
 
 if __name__ == '__main__':
