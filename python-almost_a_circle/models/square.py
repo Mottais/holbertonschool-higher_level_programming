@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""define a class inheriting from Rectangle"""
+"""
+
+define a class inheriting from Rectangle
+
+"""
 from models.rectangle import Rectangle
 
 
