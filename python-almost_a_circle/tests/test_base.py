@@ -11,7 +11,7 @@ class test_base(unittest.TestCase):
     """Testing base"""
 
     def test_init_(self):
-        """Sending no id"""
+        """création d'un objet de la classe Base"""
         b = Base()
         self.assertTrue(b.id == 1)
         b = Base()
@@ -34,8 +34,15 @@ class test_base(unittest.TestCase):
         self.assertTrue({"id": 109} == b.id)
 
     def test_init_ZeroDivisionError(self):
+        """Creating a Base object with a division by zero"""
         with self.assertRaises(ZeroDivisionError):
             b = Base(1/0)
+            print(b)
+
+    def test_init_TypeError(self):
+        """Creating a Base object with a TypeError"""
+        with self.assertRaises(TypeError):
+            b = Base(1, 1)
             print(b)
 
     def test_to_json_type(self):
