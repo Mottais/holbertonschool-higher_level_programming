@@ -51,7 +51,7 @@ class test_base(unittest.TestCase):
             b = Base(int("9" * 4301))
             print(b)'''
 
-    def test_to_json_type(self):
+    def test_to_json_string_type(self):
         """Testing the json string"""
 
         Dict = {"toto": "tutu"}
@@ -70,6 +70,12 @@ class test_base(unittest.TestCase):
         json_string = Base.to_json_string([])
         self.assertTrue(json_string == '[]')
         self.assertTrue(type(json_string) is str)
+
+    def test_to_json_string_TypeError(self):
+        """using to_json_string with a TypeError"""
+        with self.assertRaises(TypeError):
+            json_string = Base.to_json_string()
+            print(json_string)
 
 
 if __name__ == '__main__':
