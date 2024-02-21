@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
-
+from models.square import Square
 
 """Creating test cases for the base module"""
 
@@ -105,6 +105,25 @@ class test_base(unittest.TestCase):
             String = 2
             obj_from_sting = Base.from_json_string(String)
             print(obj_from_sting)
+
+    def test_save_to_file(self):
+        """Testing save_to_file"""
+
+        sq1 = Square(1)
+        sq2 = Square(2)
+        Base.save_to_file( [sq1, sq2])
+        with open("Base.json", "r") as file:
+            self.assertTrue(type(file.read()) is str)
+
+        Base.save_to_file(None)
+        with open("Base.json", "r") as file:
+            File_contain = (file.read())
+            self.assertTrue(File_contain == "[]")
+
+        Base.save_to_file([])
+        with open("Base.json", "r") as file:
+            File_contain = (file.read())
+            self.assertTrue(File_contain == "[]")
 
 
 if __name__ == '__main__':
