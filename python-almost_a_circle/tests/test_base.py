@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 import unittest
-import json
 from models.base import Base
 
-from models.square import Square
+
 """Creating test cases for the base module"""
 
 
