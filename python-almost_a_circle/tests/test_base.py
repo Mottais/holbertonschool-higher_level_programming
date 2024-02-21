@@ -50,7 +50,7 @@ class test_base(unittest.TestCase):
             b = Base(int("9" * 4301))
             print(b)'''
 
-    def test_to_json_string_type(self):
+    def test_to_json_string(self):
         """Testing the json string"""
 
         Dict = {"toto": "tutu"}
@@ -75,6 +75,36 @@ class test_base(unittest.TestCase):
         with self.assertRaises(TypeError):
             json_string = Base.to_json_string()
             print(json_string)
+
+    def test_from_json_string(self):
+        """Testing from_json_string"""
+
+        String_liste = '[{"toto": 1}, {"tutu": 2}]'
+        obj_from_sting = Base.from_json_string(String_liste)
+        self.assertTrue((obj_from_sting == [{"toto": 1}, {"tutu": 2}]))
+        self.assertTrue(type(obj_from_sting) is list)
+
+        String_liste = None
+        obj_from_sting = Base.from_json_string(String_liste)
+        self.assertTrue((obj_from_sting == []))
+        self.assertTrue(type(obj_from_sting) is list)
+
+        String_liste = '[]'
+        obj_from_sting = Base.from_json_string(String_liste)
+        self.assertTrue((obj_from_sting == []))
+        self.assertTrue(type(obj_from_sting) is list)
+
+        String_liste = '1'
+        obj_from_sting = Base.from_json_string(String_liste)
+        self.assertTrue((obj_from_sting != []))
+        self.assertTrue(type(obj_from_sting) is not list)
+
+    def test_from_json_string_TypeError(self):
+        """using from_json_string with a TypeError"""
+        with self.assertRaises(TypeError):
+            String = 2
+            obj_from_sting = Base.from_json_string(String)
+            print(obj_from_sting)
 
 
 if __name__ == '__main__':
