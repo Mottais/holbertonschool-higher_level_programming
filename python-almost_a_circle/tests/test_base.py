@@ -45,6 +45,12 @@ class test_base(unittest.TestCase):
             b = Base(1, 1)
             print(b)
 
+    def test_init_ValueError(self):
+        """Creating a Base object with a TypeError"""
+        with self.assertRaises(ValueError):
+            b = Base(int("9" * 4301))
+            print(b)
+
     def test_to_json_type(self):
         """Testing the json string"""
         sq = Square(1)
