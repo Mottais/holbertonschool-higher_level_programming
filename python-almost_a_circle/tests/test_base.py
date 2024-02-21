@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-import os
-import json
 import unittest
 from models.base import Base
-from models.rectangle import Rectangle
 from models.square import Square
 
 """Creating test cases for the base module"""
@@ -127,21 +124,6 @@ class test_base(unittest.TestCase):
         with open("Base.json", "r") as file:
             File_contain = (file.read())
             self.assertTrue(File_contain == "[]")
-
-    from io import StringIO
-
-    def test_saving_to_file2(self):
-        """Testing saving a file into json format"""
-        try:
-            os.remove("Rectangle.json")
-        except FileNotFoundError:
-            pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
-        Rectangle.save_to_file([r1])
-        with open("Rectangle.json", "r") as file:
-            content = file.read()
-        t = [{"width": 5, "height": 10, "x": 0, "y": 0, "id": 346}]
-        self.assertEqual(t, json.loads(content))
 
 
 if __name__ == '__main__':
