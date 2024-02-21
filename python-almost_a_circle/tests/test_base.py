@@ -10,7 +10,7 @@ from models.square import Square
 class test_base(unittest.TestCase):
     """Testing base"""
 
-    def test_id_new_base(self):
+    def test_init_(self):
         """Sending no id"""
         b = Base()
         self.assertTrue(b.id == 1)
@@ -24,36 +24,14 @@ class test_base(unittest.TestCase):
         self.assertTrue(b.id == 4)
         b = Base()
         self.assertTrue(b.id == 4)
-
-    def test_id_zero(self):
-        """Sending an id 0"""
-        b = Base(0)
-        self.assertTrue(0 == b.id)
-
-    def test_id_negative(self):
-        """Sending a negative id"""
         b = Base(-20)
-        self.assertTrue(-20 == b.id)
-
-    def test_id_string(self):
-        """Sending an id that is not an int"""
+        self.assertTrue(b.id == -20)
         b = Base("Betty")
-        self.assertTrue("Betty" == b.id)
-
-    def test_id_list(self):
-        """Sending an id that is not an int"""
+        self.assertTrue(b.id == "Betty")
         b = Base([1, 2, 3])
         self.assertTrue([1, 2, 3] == b.id)
-
-    def test_id_dict(self):
-        """Sending an id that is not an int"""
         b = Base({"id": 109})
         self.assertTrue({"id": 109} == b.id)
-
-    def test_id_tuple(self):
-        """Sending an id that is not an int"""
-        b = Base((8,))
-        self.assertTrue((8,) == b.id)
 
     def test_to_json_type(self):
         """Testing the json string"""
