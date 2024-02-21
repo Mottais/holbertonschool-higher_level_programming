@@ -22,7 +22,6 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
         # ou bien
         # Rectangle.__init__(self, size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
