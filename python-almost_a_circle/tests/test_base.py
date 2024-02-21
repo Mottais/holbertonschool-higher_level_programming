@@ -33,6 +33,11 @@ class test_base(unittest.TestCase):
         b = Base({"id": 109})
         self.assertTrue({"id": 109} == b.id)
 
+    def test_init_ZeroDivisionError(self):
+        with self.assertRaises(ZeroDivisionError):
+            b = Base(1/0)
+            print(b)
+
     def test_to_json_type(self):
         """Testing the json string"""
         sq = Square(1)
@@ -63,5 +68,6 @@ class test_base(unittest.TestCase):
         json_string = Base.to_json_string([])
         self.assertTrue(json_string == "[]")
 
-    if __name__ == '__main__':
-        unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
