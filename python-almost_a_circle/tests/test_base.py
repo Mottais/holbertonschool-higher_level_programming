@@ -3,6 +3,7 @@ import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
+import os
 
 """Creating test cases for the base module"""
 
@@ -160,6 +161,25 @@ class test_base(unittest.TestCase):
             r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
             b = Base.create(**r_dictionary)
             print(b)
+
+    def test_12_load_from_file(self):
+        """Testing load_from_file"""
+
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+        list_rectangles_output = Square.load_from_file()
+        self.assertTrue(list_rectangles_output == [])
+
+        with open("Square.json", "w") as file:
+            file.write('[{"size": 3, "id": 111},{"width": 2, "height": 2}]')
+        list_rectangles_output = Square.load_from_file()
+        self.assertTrue(isinstance(list_rectangles_output[0], Square))
+        self.assertTrue(isinstance(list_rectangles_output[1], Square))
+
+        with open("Square.json", "w") as file:
+            file.write('[{"toto": 111}]')
+        list_rectangles_output = Square.load_from_file()
+        self.assertTrue(isinstance(list_rectangles_output[0], Square))
 
 
 if __name__ == '__main__':
