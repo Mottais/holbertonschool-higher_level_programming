@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 from models.square import Square
 
 """Creating test cases for the base module"""
@@ -9,7 +10,7 @@ from models.square import Square
 class test_base(unittest.TestCase):
     """Testing base"""
 
-    def test_init_(self):
+    def test_01_init_(self):
         """création d'un objet de la classe Base"""
         b = Base()
         self.assertTrue(b.id == 1)
@@ -32,13 +33,13 @@ class test_base(unittest.TestCase):
         b = Base({"id": 109})
         self.assertTrue({"id": 109} == b.id)
 
-    def test_init_ZeroDivisionError(self):
+    def test_02_init_ZeroDivisionError(self):
         """Creating a Base object with a division by zero"""
         with self.assertRaises(ZeroDivisionError):
             b = Base(1/0)
             print(b)
 
-    def test_init_TypeError(self):
+    def test_02_init_TypeError(self):
         """Creating a Base object with a TypeError"""
         with self.assertRaises(TypeError):
             b = Base(1, 1)
@@ -50,7 +51,7 @@ class test_base(unittest.TestCase):
             b = Base(int("9" * 4301))
             print(b)'''
 
-    def test_to_json_string(self):
+    def test_04_to_json_string(self):
         """Testing the json string"""
 
         Dict = {"toto": "tutu"}
@@ -70,13 +71,13 @@ class test_base(unittest.TestCase):
         self.assertTrue(json_string == '[]')
         self.assertTrue(type(json_string) is str)
 
-    def test_to_json_string_TypeError(self):
+    def test_05_to_json_string_TypeError(self):
         """using to_json_string with a TypeError"""
         with self.assertRaises(TypeError):
             json_string = Base.to_json_string()
             print(json_string)
 
-    def test_from_json_string(self):
+    def test_06_from_json_string(self):
         """Testing from_json_string"""
 
         String_liste = '[{"toto": 1}, {"tutu": 2}]'
@@ -99,19 +100,19 @@ class test_base(unittest.TestCase):
         self.assertTrue((obj_from_sting != []))
         self.assertTrue(type(obj_from_sting) is not list)
 
-    def test_from_json_string_TypeError(self):
+    def test_07_from_json_string_TypeError(self):
         """using from_json_string with a TypeError"""
         with self.assertRaises(TypeError):
             String = 2
             obj_from_sting = Base.from_json_string(String)
             print(obj_from_sting)
 
-    def test_save_to_file(self):
+    def test_08_save_to_file(self):
         """Testing save_to_file"""
 
         sq1 = Square(1)
         sq2 = Square(2)
-        Base.save_to_file( [sq1, sq2])
+        Base.save_to_file([sq1, sq2])
         with open("Base.json", "r") as file:
             self.assertTrue(type(file.read()) is str)
 
@@ -124,6 +125,41 @@ class test_base(unittest.TestCase):
         with open("Base.json", "r") as file:
             File_contain = (file.read())
             self.assertTrue(File_contain == "[]")
+
+    def test_09_create(self):
+        """Testing create"""
+
+        r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
+        sq_dictionary = {'x': 1, 'y': 2, 'id': 22, 'size': 3}
+
+        r = Rectangle.create(**r_dictionary)
+        self.assertTrue(str(r) == '[Rectangle] (11) 1/2 - 3/4')
+
+        sq = Square.create(**sq_dictionary)
+        self.assertTrue(str(sq) == '[Square] (22) 1/2 - 3')
+
+        sq2 = Square.create(**r_dictionary)
+        self.assertTrue(str(sq2) == '[Square] (11) 1/2 - 3')
+
+        r2 = Rectangle.create(**sq_dictionary)
+        self.assertTrue(str(r2) == '[Rectangle] (22) 1/2 - 1/1')
+
+        r = Rectangle.create(**{})
+        self.assertTrue(str(r) == '[Rectangle] (11) 0/0 - 1/1')
+
+    def test_10_create_TypeError(self):
+        """using create with a TypeError"""
+        with self.assertRaises(TypeError):
+            r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
+            r = Rectangle.create(2, **r_dictionary)
+            print(r)
+
+    def test_11_create_UnboundLocalError(self):
+        """using create with a UnboundLocalError"""
+        with self.assertRaises(UnboundLocalError):
+            r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
+            b = Base.create(**r_dictionary)
+            print(b)
 
 
 if __name__ == '__main__':
