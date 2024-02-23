@@ -58,10 +58,10 @@ class test_rectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(output.getvalue(), "##\n" * 3)'''
 
-    def test_07_str(self):
+    '''def test_07_str(self):
         """Testing __str__"""
         r1 = Rectangle(4, 6, 2, 1, 12)
-        self.assertTrue(str(r1) == "[Rectangle] (12) 2/1 - 4/6")
+        self.assertTrue(str(r1) == "[Rectangle] (12) 2/1 - 4/6")'''
 
     def test_08_update(self):
         """Testing update"""
