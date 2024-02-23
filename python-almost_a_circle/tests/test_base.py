@@ -122,9 +122,9 @@ class test_base(unittest.TestCase):
             self.assertTrue((file.read()) == "[]")'''
 
         # POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???
-        '''Square.save_to_file(None)
+        Square.save_to_file(None)
         with open("Square.json", "r") as file:
-            self.assertTrue(file.read() == "[]")'''
+            self.assertTrue(file.read() == "[]")
 
 
         '''try:
