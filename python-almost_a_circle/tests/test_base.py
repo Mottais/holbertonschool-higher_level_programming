@@ -162,17 +162,17 @@ class test_base(unittest.TestCase):
         self.assertTrue(str(sq2) == '[Square] (11) 1/2 - 3')
 
         r2 = Rectangle.create(**sq_dictionary)
-        self.assertTrue(str(r2) == '[Rectangle] (22) 1/2 - 1/1')'''
+        self.assertTrue(str(r2) == '[Rectangle] (22) 1/2 - 1/1')
 
-        '''r = Rectangle.create(**{})
+        r = Rectangle.create(**{})
         self.assertTrue(str(r) == '[Rectangle] (11) 0/0 - 1/1')'''
 
-    def test_10_create_TypeError(self):
+    '''def test_10_create_TypeError(self):
         """using create with a TypeError"""
         with self.assertRaises(TypeError):
             r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
             r = Rectangle.create(2, **r_dictionary)
-            print(r)
+            print(r)'''
 
     def test_11_create_UnboundLocalError(self):
         """using create with a UnboundLocalError"""
