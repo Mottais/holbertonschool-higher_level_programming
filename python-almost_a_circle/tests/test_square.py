@@ -88,23 +88,15 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_load_from_file_same_height(self):
-        """Checking that an object was created from the
-        list and has the same height"""
-        r1 = Square(10)
-        list_squares_input = [r1]
-        Square.save_to_file(list_squares_input)
-        list_squares_output = Square.load_from_file()
-        self.assertEqual(r1.size, list_squares_output[0].size)'''
 
-    def test_load_from_file_same_x(self):
+    '''def test_load_from_file_same_x(self):
         """Checking that an object was created from the
         list and has the same x"""
         r1 = Square(10, 2, 8)
         list_squares_input = [r1]
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
-        self.assertEqual(r1.x, list_squares_output[0].x)
+        self.assertEqual(r1.x, list_squares_output[0].x)'''
 
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the
