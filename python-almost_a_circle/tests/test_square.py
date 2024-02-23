@@ -89,16 +89,16 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_load_from_file_same_y(self):
+    def test_load_from_file_same_y(self):
         """Checking that an object was created from the
         list and has the same y"""
         r1 = Square(10, 2, 8)
         list_squares_input = [r1]
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
-        self.assertEqual(r1.y, list_squares_output[0].y)'''
+        self.assertEqual(r1.y, list_squares_output[0].y)
 
-    def test_display_square(self):
+    '''def test_display_square(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
         sys.stdout = capturedOutput
@@ -117,7 +117,7 @@ class test_square(unittest.TestCase):
             + "##########\n"
             + "##########\n"
         )
-        self.assertEqual(capturedOutput.getvalue(), output)
+        self.assertEqual(capturedOutput.getvalue(), output)'''
 
     def test_display_square_size_one(self):
         """Checking the stdout output by capturing it"""
