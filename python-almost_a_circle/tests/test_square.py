@@ -18,7 +18,7 @@ class test_square(unittest.TestCase):
     def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            sq = Square("1")
+            sq = Square([1, 2])
         with self.assertRaises(TypeError):
             sq = Square(1, "46")
         with self.assertRaises(TypeError):
