@@ -12,7 +12,7 @@ class test_square(unittest.TestCase):
     def test_asquare_id(self):
         """Test the id for square"""
         sq = Square(2, 0, 0, 199)
-        self.assertEqual(199, sq.id)
+        self.assertTrue(199 == sq.id)
 
     def test_width_string(self):
         """Testing for other than int"""
@@ -58,7 +58,7 @@ class test_square(unittest.TestCase):
 
     def test_str_overload(self):
         s = Square(5, 8, 7, 88)
-        self.assertEqual(s.__str__(), "[Square] (88) 8/7 - 5")
+        self.assertTrue(s.__str__() == "[Square] (88) 8/7 - 5")
 
 
 
@@ -82,7 +82,7 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             content = file.read()
 
-        self.assertEqual("[]", content)
+        self.assertTrue("[]" == content)
 
 
 
@@ -96,7 +96,7 @@ class test_square(unittest.TestCase):
         list_squares_input = [r1]
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
-        self.assertEqual(r1.y, list_squares_output[0].y)
+        self.assertTrue(r1.y == list_squares_output[0].y)
 
 
 
@@ -109,7 +109,7 @@ class test_square(unittest.TestCase):
         r1.display()
         sys.stdout = sys.__stdout__
         output = "###\n###\n###\n"
-        self.assertEqual(capturedOutput.getvalue(), output)
+        self.assertTrue(capturedOutput.getvalue() == output)
 
     def test_saving_to_file_empty_list(self):
         """Test saving a file into JSON format with an empty list"""
