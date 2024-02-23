@@ -204,12 +204,14 @@ class test_base(unittest.TestCase):
 
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the list"""
+        # POURQUOI LE CHECKER NE PASSE PAS EN CREANT "Square.json" VIA open ???"
         '''with open("Square.json", "w") as file:
             file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')'''
         sq = Square(1, 2, 3)
         list_squares_input = [sq]
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
+        # POURQUOI CE TEST NE PASSE PAS EN TESTANT: type is Square???
         '''self.assertTrue(type(list_squares_output[0]) is Square)'''
         self.assertTrue(sq.y == list_squares_output[0].y)
 
