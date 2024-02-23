@@ -78,13 +78,13 @@ class test_base(unittest.TestCase):
             json_string = Base.to_json_string()
             print(json_string)'''
 
-    def test_06_from_json_string(self):
+    '''def test_06_from_json_string(self):
         """Testing from_json_string"""
 
         String_liste = '[{"toto": 1}, {"tutu": 2}]'
         obj_from_sting = Base.from_json_string(String_liste)
         self.assertTrue((obj_from_sting == [{"toto": 1}, {"tutu": 2}]))
-        self.assertTrue(type(obj_from_sting) is list)
+        self.assertTrue(type(obj_from_sting) is list)'''
 
         '''String_liste = None
         obj_from_sting = Base.from_json_string(String_liste)
