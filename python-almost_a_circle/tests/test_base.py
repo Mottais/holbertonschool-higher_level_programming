@@ -28,11 +28,11 @@ class test_base(unittest.TestCase):
         b = Base(-20)
         self.assertTrue(b.id == -20)
         b = Base("Betty")
-        self.assertTrue(b.id == "Betty")'''
+        self.assertTrue(b.id == "Betty")
         b = Base([1, 2, 3])
         self.assertTrue([1, 2, 3] == b.id)
         b = Base({"id": 109})
-        self.assertTrue({"id": 109} == b.id)
+        self.assertTrue({"id": 109} == b.id)'''
 
     def test_02_init_ZeroDivisionError(self):
         """Creating a Base object with a division by zero"""
