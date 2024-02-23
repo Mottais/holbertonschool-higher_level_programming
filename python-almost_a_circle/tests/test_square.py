@@ -21,9 +21,6 @@ class test_square(unittest.TestCase):
             sq = Square("1")
         with self.assertRaises(TypeError):
             sq = Square(1, "46")
-
-    def test_y_string(self):
-        """Testing for other than int"""
         with self.assertRaises(TypeError):
             sq = Square(1, 7, "46")
 
@@ -31,14 +28,8 @@ class test_square(unittest.TestCase):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
             sq = Square(-4)
-
-    def test_x_negative(self):
-        """Testing with negative int"""
         with self.assertRaises(ValueError):
             sq = Square(4, -3)
-
-    def test_y_negative(self):
-        """Testing with negative int"""
         with self.assertRaises(ValueError):
             sq = Square(4, 2, -3)
 
