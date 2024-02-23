@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import unittest, os, sys, json
+import unittest
+import os
+import sys
 from models.square import Square
 from io import StringIO
 """Runs test cases for the square module"""
