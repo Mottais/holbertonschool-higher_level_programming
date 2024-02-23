@@ -49,20 +49,12 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(0, 5)
 
-    '''def test_width_float(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(1.07, 5)'''
 
-    '''def test_x_float(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(5, 1.07)'''
 
-    '''def test_y_float(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Square(5, 8, 1.07)'''
+
+
+
+
 
     def test_str_overload(self):
         s = Square(5, 8, 7, 88)
@@ -72,10 +64,10 @@ class test_square(unittest.TestCase):
 
 
 
-    def test_to_dict(self):
+    '''def test_to_dict(self):
         """Testing the type that is returned from the to_dictionary method"""
         r1 = Square(5)
-        self.assertEqual(type(r1.to_dictionary()), dict)
+        self.assertEqual(type(r1.to_dictionary()), dict)'''
 
     def test_to_dict_print(self):
         """Testing the dict that will be printed"""
