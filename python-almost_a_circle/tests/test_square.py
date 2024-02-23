@@ -24,7 +24,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, 7, "46")
 
-    '''def test_width_negative(self):
+    def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
             sq = Square(-4)
@@ -35,7 +35,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(0)
 
-    def test_saving_to_file_None(self):
+    '''def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Square.json")

@@ -91,17 +91,6 @@ import os
 class test_square(unittest.TestCase):
     """Testing square"""
 
-    def test_width_negative(self):
-        """Testing with negative int"""
-        with self.assertRaises(ValueError):
-            sq = Rectangle(-4, 2)
-        with self.assertRaises(ValueError):
-            sq = Square(4, -3)
-        with self.assertRaises(ValueError):
-            sq = Square(4, 2, -3)
-        with self.assertRaises(ValueError):
-            sq = Square(0)
-
     def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
