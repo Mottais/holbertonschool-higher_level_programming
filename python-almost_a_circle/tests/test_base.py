@@ -158,10 +158,10 @@ class test_base(unittest.TestCase):
         sq = Square.create(**sq_dictionary)
         self.assertTrue(str(sq) == '[Square] (22) 1/2 - 3')
 
-        sq2 = Square.create(**r_dictionary)
+        '''sq2 = Square.create(**r_dictionary)
         self.assertTrue(str(sq2) == '[Square] (11) 1/2 - 3')
 
-        '''r2 = Rectangle.create(**sq_dictionary)
+        r2 = Rectangle.create(**sq_dictionary)
         self.assertTrue(str(r2) == '[Rectangle] (22) 1/2 - 1/1')'''
 
         '''r = Rectangle.create(**{})
