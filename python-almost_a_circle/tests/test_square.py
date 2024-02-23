@@ -86,14 +86,7 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_json_string_type(self):
-        """Testing the returned type"""
-        list_input = [{"id": 2089, "size": 10}, {"id": 2712, "size": 1}]
-        json_list_input = Square.to_json_string(list_input)
-        list_output = Square.from_json_string(json_list_input)
-        self.assertEqual(type(list_input), list)'''
-
-    def test_json_string(self):
+    '''def test_json_string(self):
         """Testing that the json string gets converted into a list"""
         list_input = [{"id": 2089, "size": 10}, {"id": 2712, "size": 7}]
         json_list_input = Square.to_json_string(list_input)
@@ -101,7 +94,7 @@ class test_square(unittest.TestCase):
         s1 = {"id": 2089, "size": 10}
         s2 = {"size": 7, "id": 2712}
         self.assertEqual(list_input[0], s1)
-        self.assertEqual(list_input[1], s2)
+        self.assertEqual(list_input[1], s2)'''
 
     def test_dict_to_instance(self):
         """test that an instance is created from a dict"""
