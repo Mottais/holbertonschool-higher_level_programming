@@ -137,13 +137,13 @@ class test_base(unittest.TestCase):
 
         # POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???
         # POURQOUI FAUT-IL SUPPR 'Square.json' avant ave_to_file ???
-        '''try:
+        try:
             os.remove("Square.json")
         except Exception:
             pass
         Square.save_to_file([])
         with open("Square.json", "r") as file:
-            self.assertTrue((file.read()) == "[]")'''
+            self.assertTrue((file.read()) == "[]")
 
 
     def test_09_create(self):
