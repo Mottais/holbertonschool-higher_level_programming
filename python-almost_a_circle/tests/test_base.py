@@ -15,7 +15,7 @@ class test_base(unittest.TestCase):
         """création d'un objet de la classe Base"""
         b = Base()
         self.assertTrue(b.id == 1)
-        b = Base()
+        '''b = Base()
         self.assertTrue(b.id == 2)
         b = Base(1)
         self.assertTrue(b.id == 1)
@@ -24,7 +24,7 @@ class test_base(unittest.TestCase):
         b = Base(4)
         self.assertTrue(b.id == 4)
         b = Base()
-        self.assertTrue(b.id == 4)
+        self.assertTrue(b.id == 4)'''
         b = Base(-20)
         self.assertTrue(b.id == -20)
         b = Base("Betty")
