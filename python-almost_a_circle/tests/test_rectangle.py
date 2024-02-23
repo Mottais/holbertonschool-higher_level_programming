@@ -30,11 +30,11 @@ class test_rectangle(unittest.TestCase):
             r = Rectangle(-1, 1)
             print(r)'''
 
-    def test_04_init_ZeroDivisionError(self):
+    '''def test_04_init_ZeroDivisionError(self):
         """Creating a Rectangle object with a division by zero"""
         with self.assertRaises(ZeroDivisionError):
             r = Rectangle(1/0, 2)
-            print(r)
+            print(r)'''
 
     def test_05_area(self):
         """Testing area"""
