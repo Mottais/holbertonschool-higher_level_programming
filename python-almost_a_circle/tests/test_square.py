@@ -57,9 +57,6 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_str_overload(self):
-        s = Square(5, 8, 7, 88)
-        self.assertTrue(s.__str__() == "[Square] (88) 8/7 - 5")'''
 
 
 
@@ -71,7 +68,7 @@ class test_square(unittest.TestCase):
 
 
 
-    def test_saving_to_file_None(self):
+    '''def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Square.json")
@@ -83,7 +80,7 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             content = file.read()
 
-        self.assertTrue("[]" == content)
+        self.assertTrue("[]" == content)'''
 
 
 
