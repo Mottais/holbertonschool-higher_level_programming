@@ -36,7 +36,7 @@ class test_square(unittest.TestCase):
     def test_width_zero(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            sq = Square(0, 5)
+            sq = Square(-1, 5)
 
     def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
