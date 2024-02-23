@@ -38,24 +38,6 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(0, 5)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
@@ -70,11 +52,6 @@ class test_square(unittest.TestCase):
 
         self.assertTrue("[]" == content)
 
-
-
-
-
-
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the
         list and has the same y"""
@@ -83,9 +60,6 @@ class test_square(unittest.TestCase):
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
         self.assertTrue(r1.y == list_squares_output[0].y)
-
-
-
 
     def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
