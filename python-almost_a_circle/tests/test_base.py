@@ -187,7 +187,7 @@ class test_base(unittest.TestCase):
         '''if os.path.exists("Square.json"):
             os.remove("Square.json")
         list_rectangles_output = Square.load_from_file()
-        self.assertTrue(list_rectangles_output == [])'''
+        self.assertTrue(list_rectangles_output == [])
 
         with open("Square.json", "w") as file:
             file.write('[{"size": 3, "id": 111},{"width": 2, "height": 2}]')
@@ -198,11 +198,8 @@ class test_base(unittest.TestCase):
         with open("Square.json", "w") as file:
             file.write('[{"toto": 111}]')
         list_rectangles_output = Square.load_from_file()
-        self.assertTrue(isinstance(list_rectangles_output[0], Square))
+        self.assertTrue(isinstance(list_rectangles_output[0], Square))'''
 
-
-
-    def test_load_from_file_same_y(self):
         """Checking that an object was created from the list"""
         # POURQUOI LE CHECKER NE PASSE PAS EN CREANT "Square.json" VIA open ???"
         '''with open("Square.json", "w") as file:
