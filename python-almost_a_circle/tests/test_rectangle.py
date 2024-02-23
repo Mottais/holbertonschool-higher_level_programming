@@ -36,7 +36,7 @@ class test_rectangle(unittest.TestCase):
 
     def test_str_overload(self):
         r = Rectangle(5, 10, 8, 7, 88)
-        self.assertEqual(r.__str__(), "[Rectangle] (88) 8/7 - 5/10")
+        self.assertEqual(str(r), "[Rectangle] (88) 8/7 - 5/10")
 
     def test_to_dict(self):
         """Testing the type that is returned from the to_dictionary method"""
