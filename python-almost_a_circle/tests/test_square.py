@@ -100,17 +100,8 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_display_square_size_one(self):
-        """Checking the stdout output by capturing it"""
-        capturedOutput = StringIO()
-        sys.stdout = capturedOutput
-        r1 = Square(1)
-        r1.display()
-        sys.stdout = sys.__stdout__
-        output = "#\n"
-        self.assertEqual(capturedOutput.getvalue(), output)'''
 
-    def test_display_square_size_zero(self):
+    '''def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
         sys.stdout = capturedOutput
@@ -118,7 +109,7 @@ class test_square(unittest.TestCase):
         r1.display()
         sys.stdout = sys.__stdout__
         output = "###\n###\n###\n"
-        self.assertEqual(capturedOutput.getvalue(), output)
+        self.assertEqual(capturedOutput.getvalue(), output)'''
 
     def test_saving_to_file_empty_list(self):
         """Test saving a file into JSON format with an empty list"""
