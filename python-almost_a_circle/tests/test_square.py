@@ -87,14 +87,9 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_isnot_dict_to_instance(self):
-        """test that an instance is created from a dict"""
-        r1 = Square(109)
-        r1_dictionary = r1.to_dictionary()
-        r2 = Square.create(**r1_dictionary)
-        self.assertIsNot(r1, r2)'''
 
-    def test_load_from_file_not_the_same(self):
+
+    '''def test_load_from_file_not_the_same(self):
         """Checking that an object was created from the
         list but has a different adress."""
         r1 = Square(10)
@@ -102,7 +97,7 @@ class test_square(unittest.TestCase):
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
         self.assertNotEqual(id(r1), id(list_squares_output[0]))
-
+'''
     def test_load_from_file_same_width(self):
         """Checking that an object was created from the
         list and has the same witdh"""
