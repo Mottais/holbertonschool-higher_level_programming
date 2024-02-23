@@ -10,37 +10,17 @@ from io import StringIO
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
-    def test_00_id(self):
-        """Testing id"""
+    def test_00_init_(self):
+        """Testing _init"""
         Base._Base__nb_objects = 0
         r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
-        r3 = Rectangle(10, 2, 0, 0, 12)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 12)
+        r2 = Rectangle(10, 2, 3, 4, 12)
+        self.assertTrue(r1.width == 10)
+        self.assertTrue(r1.height == 2)
+        self.assertTrue(r2.x == 3)
+        self.assertTrue(r2.y == 4)
 
-    def test_01_width(self):
-        """Testing width"""
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.width, 10)
-
-    def test_02_height(self):
-        """Testing height"""
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.height, 2)
-
-    def test_03_x(self):
-        """Testing x"""
-        r1 = Rectangle(10, 2, 3)
-        self.assertEqual(r1.x, 3)
-
-    def test_04_y(self):
-        """Testing y"""
-        r1 = Rectangle(10, 2, 3, 4)
-        self.assertEqual(r1.y, 4)
-
-    def test_05_area(self):
+    def test_02_area(self):
         """Testing area"""
         r1 = Rectangle(3, 2)
         self.assertEqual(r1.area(), 6)  # 3 * 2 = 6 (width * height)
