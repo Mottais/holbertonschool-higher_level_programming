@@ -15,15 +15,15 @@ class test_square(unittest.TestCase):
         sq = Square(2, 0, 0, 199)
         self.assertTrue(199 == sq.id)
 
-    '''def test_width_string(self):
+    def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            sq = Square("1")'''
+            sq = Square("1")
 
-    def test_x_string(self):
+    '''def test_x_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            sq = Square(1, "46")
+            sq = Square(1, "46")'''
 
     def test_y_string(self):
         """Testing for other than int"""
