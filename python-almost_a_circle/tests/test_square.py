@@ -37,17 +37,10 @@ class test_square(unittest.TestCase):
 
     def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
-        try:
-            os.remove("Square.json")
-        except FileNotFoundError:
-            pass
 
         Square.save_to_file(None)
-
         with open("Square.json", "r") as file:
-            content = file.read()
-
-        self.assertTrue("[]" == content)
+            self.assertTrue(file.read() == "[]")
 
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the
