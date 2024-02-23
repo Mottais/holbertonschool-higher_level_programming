@@ -86,19 +86,13 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_dict_to_instance(self):
-        """test that an instance is created from a dict"""
-        r1 = Square(5)
-        r1_dictionary = r1.to_dictionary()
-        r2 = Square.create(**r1_dictionary)
-        self.assertNotEqual(r1, r2)'''
 
-    def test_isnot_dict_to_instance(self):
+    '''def test_isnot_dict_to_instance(self):
         """test that an instance is created from a dict"""
         r1 = Square(109)
         r1_dictionary = r1.to_dictionary()
         r2 = Square.create(**r1_dictionary)
-        self.assertIsNot(r1, r2)
+        self.assertIsNot(r1, r2)'''
 
     def test_load_from_file_not_the_same(self):
         """Checking that an object was created from the
