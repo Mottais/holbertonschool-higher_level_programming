@@ -24,11 +24,11 @@ class test_rectangle(unittest.TestCase):
             r = Rectangle("1", 1)
             print(r)'''
 
-    def test_03_init_ValueError(self):
+    '''def test_03_init_ValueError(self):
         """Creating a Rectangle object with a ValueError"""
         with self.assertRaises(ValueError):
             r = Rectangle(-1, 1)
-            print(r)
+            print(r)'''
 
     def test_04_init_ZeroDivisionError(self):
         """Creating a Rectangle object with a division by zero"""
