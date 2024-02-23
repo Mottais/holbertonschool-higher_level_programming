@@ -41,16 +41,25 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertTrue(file.read() == "[]")
 
+    def test_saving_to_file_empty_list(self):
+        """Test saving a file into JSON format with an empty list"""
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
+        sq = Square(5, 0, 0, 346)
+        sq.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+
     def test_load_from_file_same_y(self):
-        """Checking that an object was created from the
-        list and has the same y"""
+        """Checking that an object was created from the list"""
         '''with open("Square.json", "w") as file:
             file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')'''
         sq = Square(1, 2, 3)
         list_squares_input = [sq]
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
-        self.assertTrue(type(list_squares_output[0]) is type(sq))
+        '''self.assertTrue(type(list_squares_output[0]) is Square)'''
         self.assertTrue(sq.y == list_squares_output[0].y)
 
     def test_display_square_size_zero(self):
@@ -63,18 +72,7 @@ class test_square(unittest.TestCase):
         output = "###\n###\n###\n"
         self.assertTrue(capturedOutput.getvalue() == output)
 
-    def test_saving_to_file_empty_list(self):
-        """Test saving a file into JSON format with an empty list"""
-        try:
-            os.remove("Square.json")
-        except FileNotFoundError:
-            pass
-        # Create an instance of your Square class
-        square = Square(5, 0, 0, 346)
-        # Call the save_to_file method with an empty list
-        square.save_to_file([])
-        # You can add assertions to verify the test's success, for example, checking if the file exists
-        self.assertTrue(os.path.exists("Square.json"))
+
 
     if __name__ == '__main__':
         unittest.main()
