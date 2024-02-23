@@ -193,10 +193,10 @@ class test_rectangle(unittest.TestCase):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
         sys.stdout = capturedOutput
-        r1 = Rectangle(10, 4)
+        r1 = Rectangle(10, 3)
         r1.display()
         sys.stdout = sys.__stdout__
-        output = "##########\n" + "##########\n" + "##########\n" + "##########\n"
+        output = "##########\n" + "##########\n" + "##########\n"
         self.assertEqual(capturedOutput.getvalue(), output)
 
     def test_display_square_size_one(self):
