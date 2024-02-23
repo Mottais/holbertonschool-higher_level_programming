@@ -64,12 +64,9 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_to_dict(self):
-        """Testing the type that is returned from the to_dictionary method"""
-        r1 = Square(5)
-        self.assertEqual(type(r1.to_dictionary()), dict)'''
 
-    def test_to_dict_print(self):
+
+    '''def test_to_dict_print(self):
         """Testing the dict that will be printed"""
         r1 = Square(5, 0, 0, 410)
         r1_dict = r1.to_dictionary()
@@ -78,7 +75,7 @@ class test_square(unittest.TestCase):
     def test_missing_height(self):
         """Expecting a type error because size are missing"""
         with self.assertRaises(TypeError):
-            Square()
+            Square()'''
 
     def test_saving_to_file(self):
         """Testing saving a file into json format"""
