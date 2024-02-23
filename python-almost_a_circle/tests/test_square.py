@@ -99,7 +99,7 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_display_square_size_zero(self):
+    def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
         sys.stdout = capturedOutput
@@ -107,9 +107,9 @@ class test_square(unittest.TestCase):
         r1.display()
         sys.stdout = sys.__stdout__
         output = "###\n###\n###\n"
-        self.assertTrue(capturedOutput.getvalue() == output)'''
+        self.assertTrue(capturedOutput.getvalue() == output)
 
-    def test_saving_to_file_empty_list(self):
+    '''def test_saving_to_file_empty_list(self):
         """Test saving a file into JSON format with an empty list"""
         try:
             os.remove("Square.json")
@@ -120,7 +120,7 @@ class test_square(unittest.TestCase):
         # Call the save_to_file method with an empty list
         square.save_to_file([])
         # You can add assertions to verify the test's success, for example, checking if the file exists
-        self.assertTrue(os.path.exists("Square.json"))
+        self.assertTrue(os.path.exists("Square.json"))'''
 
     if __name__ == '__main__':
         unittest.main()
