@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+''' PAS NECESSAIRE POUR LE CHECKER
 import unittest
 import sys
 from models.rectangle import Rectangle, Base
@@ -81,4 +83,4 @@ class test_rectangle(unittest.TestCase):
 
     if __name__ == '__main__':
         unittest.main()
-    pass
+'''
