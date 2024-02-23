@@ -127,22 +127,22 @@ class test_base(unittest.TestCase):
             self.assertTrue(file.read() == "[]")
 
 
-        try:
+        '''try:
             os.remove("Base.json")
         except FileNotFoundError:
             pass
         Base.save_to_file([])
         with open("Base.json", "r") as file:
-            self.assertTrue((file.read()) == "[]")
+            self.assertTrue((file.read()) == "[]")'''
 
 
-        '''try:
+        try:
             os.remove("Square.json")
         except Exception:
             pass
         Square.save_to_file([])
         with open("Square.json", "r") as file:
-            self.assertTrue((file.read()) == "[]")'''
+            self.assertTrue((file.read()) == "[]")
 
 
     def test_09_create(self):
