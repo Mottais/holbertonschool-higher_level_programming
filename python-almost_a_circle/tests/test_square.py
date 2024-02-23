@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import os
 import sys
 from models.square import Square
 from io import StringIO
@@ -35,6 +34,8 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(0)
 
+    '''PORQUOI CE TEST DOIT ETRE FAIT SUR UN CARRE ET NON
+    PAS SUR UN RECTANGLE POUR PASSER LE 'CHECKER' ???'''
     def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
