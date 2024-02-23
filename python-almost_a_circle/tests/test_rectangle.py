@@ -3,17 +3,13 @@ import unittest
 import os
 import json
 import sys
-from models.rectangle import Rectangle, Base
+from models.rectangle import Rectangle
 from io import StringIO
 """Runs test cases for the Rectangle module"""
 
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
-
-    '''def test_rectangle_inherits_from_base(self):
-        """ Testing inheritance """
-        self.assertTrue(issubclass(Rectangle, Base))'''
 
     def test_arectangle_id(self):
         """Test the id for Rectangle"""
@@ -23,16 +19,12 @@ class test_rectangle(unittest.TestCase):
     def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            rect = Rectangle("1", 5)
-
-
+            Rectangle("1", 5)
 
     def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            rect = Rectangle(-4, 5)
-
-
+            Rectangle(-4, 5)
 
     def test_str_overload(self):
         r = Rectangle(5, 10, 8, 7, 88)
@@ -48,7 +40,7 @@ class test_rectangle(unittest.TestCase):
         r1 = Rectangle(5, 4, 0, 0, 400)
         r1_dict = r1.to_dictionary()
         self.assertEqual(r1_dict,
-        {"width": 5, "height": 4, "x": 0, "y": 0, "id": 400})
+                         {"width": 5, "height": 4, "x": 0, "y": 0, "id": 400})
 
     def test_missing_height(self):
         """Expecting a type error because height and width are missing"""
@@ -70,7 +62,7 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
         r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file([r1])
@@ -83,9 +75,8 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             content = file.read()
@@ -95,16 +86,15 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             content = file.read()
         self.assertEqual(str, type(content))
         try:
             os.remove("Rectangle.json")
-        except:
+        except FileNotFoundError:
             pass
 
     def test_json_string_type(self):
@@ -193,10 +183,10 @@ class test_rectangle(unittest.TestCase):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
         sys.stdout = capturedOutput
-        r1 = Rectangle(10, 4)
+        r1 = Rectangle(10, 3)
         r1.display()
         sys.stdout = sys.__stdout__
-        output = "##########\n" + "##########\n" + "##########\n" + "##########\n"
+        output = "##########\n" + "##########\n" + "##########\n"
         self.assertEqual(capturedOutput.getvalue(), output)
 
     def test_display_square_size_one(self):
