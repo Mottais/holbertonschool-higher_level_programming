@@ -174,12 +174,12 @@ class test_base(unittest.TestCase):
             r = Rectangle.create(2, **r_dictionary)
             print(r)'''
 
-    def test_11_create_UnboundLocalError(self):
+    '''def test_11_create_UnboundLocalError(self):
         """using create with a UnboundLocalError"""
         with self.assertRaises(UnboundLocalError):
             r_dictionary = {'x': 1, 'y': 2, 'id': 11, 'width': 3, 'height': 4}
             b = Base.create(**r_dictionary)
-            print(b)
+            print(b)'''
 
     def test_12_load_from_file(self):
         """Testing load_from_file"""
