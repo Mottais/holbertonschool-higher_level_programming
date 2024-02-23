@@ -23,7 +23,7 @@ class test_rectangle(unittest.TestCase):
     def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            rect = Rectangle("1", 5)
+            Rectangle("1", 5)
 
 
 
