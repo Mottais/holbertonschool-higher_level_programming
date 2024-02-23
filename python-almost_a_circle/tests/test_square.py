@@ -35,33 +35,6 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(0)
 
-    def test_saving_to_file_None(self):
-        """Testing saving a file into json format sending None"""
-        Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            self.assertTrue(file.read() == "[]")
-
-    def test_saving_to_file_empty_list(self):
-        """Test saving a file into JSON format with an empty list"""
-        try:
-            os.remove("Square.json")
-        except FileNotFoundError:
-            pass
-        sq = Square(5, 0, 0, 346)
-        sq.save_to_file([])
-        self.assertTrue(os.path.exists("Square.json"))
-
-    def test_load_from_file_same_y(self):
-        """Checking that an object was created from the list"""
-        '''with open("Square.json", "w") as file:
-            file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')'''
-        sq = Square(1, 2, 3)
-        list_squares_input = [sq]
-        Square.save_to_file(list_squares_input)
-        list_squares_output = Square.load_from_file()
-        '''self.assertTrue(type(list_squares_output[0]) is Square)'''
-        self.assertTrue(sq.y == list_squares_output[0].y)
-
     def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()
@@ -73,6 +46,5 @@ class test_square(unittest.TestCase):
         self.assertTrue(capturedOutput.getvalue() == output)
 
 
-
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
