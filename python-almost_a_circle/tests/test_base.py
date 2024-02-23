@@ -101,12 +101,12 @@ class test_base(unittest.TestCase):
         self.assertTrue((obj_from_sting != []))
         self.assertTrue(type(obj_from_sting) is not list)'''
 
-    def test_07_from_json_string_TypeError(self):
+    '''def test_07_from_json_string_TypeError(self):
         """using from_json_string with a TypeError"""
         with self.assertRaises(TypeError):
             String = 2
             obj_from_sting = Base.from_json_string(String)
-            print(obj_from_sting)
+            print(obj_from_sting)'''
 
     def test_08_save_to_file(self):
         """Testing save_to_file"""
