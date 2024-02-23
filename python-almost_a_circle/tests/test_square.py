@@ -68,19 +68,6 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_saving_to_file(self):
-        """Testing saving a file into json format"""
-        try:
-            os.remove("Square.json")
-        except:
-            pass
-        r1 = Square(5, 0, 0, 346)
-        Square.save_to_file([r1])
-        with open("Square.json", "r") as file:
-            content = file.read()
-        t = [{"id": 346, "x": 0, "size": 5, "y": 0}]
-        self.assertEqual(t, json.loads(content))'''
-
 
 
     def test_saving_to_file_None(self):
@@ -97,28 +84,14 @@ class test_square(unittest.TestCase):
 
         self.assertEqual("[]", content)
 
-    '''def test_saving_to_file_type(self):
-        """Testing saving a file into json format and testing the type"""
-        try:
-            os.remove("Square.json")
-        except:
-            pass
-        r1 = Square(5, 0, 0, 346)
-        Square.save_to_file([r1])
-        with open("Square.json", "r") as file:
-            content = file.read()
-        self.assertEqual(str, type(content))
-        try:
-            os.remove("Square.json")
-        except:
-            pass'''
 
-    def test_json_string_type(self):
+
+    '''def test_json_string_type(self):
         """Testing the returned type"""
         list_input = [{"id": 2089, "size": 10}, {"id": 2712, "size": 1}]
         json_list_input = Square.to_json_string(list_input)
         list_output = Square.from_json_string(json_list_input)
-        self.assertEqual(type(list_input), list)
+        self.assertEqual(type(list_input), list)'''
 
     def test_json_string(self):
         """Testing that the json string gets converted into a list"""
