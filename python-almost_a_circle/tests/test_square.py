@@ -6,6 +6,7 @@ from io import StringIO
 """Runs test cases for the square module"""
 
 
+# OK ici
 class test_square(unittest.TestCase):
     """Testing square"""
 
