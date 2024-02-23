@@ -68,19 +68,6 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_saving_to_file_None(self):
-        """Testing saving a file into json format sending None"""
-        try:
-            os.remove("Square.json")
-        except:
-            pass
-        r1 = Square(5, 0, 0, 346)
-        Square.save_to_file(None)
-
-        with open("Square.json", "r") as file:
-            content = file.read()
-
-        self.assertTrue("[]" == content)'''
 
 
 
