@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-''' PAS NECESSAIRE POUR LE CHECKER
+
 import unittest
 import sys
 from models.rectangle import Rectangle, Base
@@ -10,6 +10,7 @@ from io import StringIO
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
+    ''' PAS NECESSAIRE POUR LE CHECKER
     def test_01_init_(self):
         """Testing _init"""
         Base._Base__nb_objects = 0
@@ -83,4 +84,4 @@ class test_rectangle(unittest.TestCase):
 
     if __name__ == '__main__':
         unittest.main()
-'''
+    '''
