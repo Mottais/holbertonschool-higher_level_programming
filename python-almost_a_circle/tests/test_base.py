@@ -128,7 +128,7 @@ class test_base(unittest.TestCase):
 
         Base.save_to_file([])
         try:
-            os.remove("Square.json")
+            os.remove("Base.json")
         except FileNotFoundError:
             pass
         with open("Base.json", "r") as file:
