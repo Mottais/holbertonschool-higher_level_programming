@@ -61,7 +61,7 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except Exception:
             pass
         r1 = Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file([r1])
@@ -74,7 +74,7 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except Exception:
             pass
         Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
@@ -86,7 +86,7 @@ class test_rectangle(unittest.TestCase):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Rectangle.json")
-        except:
+        except Exception:
             pass
         Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
@@ -95,7 +95,7 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(str, type(content))
         try:
             os.remove("Rectangle.json")
-        except:
+        except Exception:
             pass
 
     def test_json_string_type(self):
