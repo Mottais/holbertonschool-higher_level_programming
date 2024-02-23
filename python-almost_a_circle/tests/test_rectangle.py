@@ -11,10 +11,6 @@ from io import StringIO
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
 
-    '''def test_rectangle_inherits_from_base(self):
-        """ Testing inheritance """
-        self.assertTrue(issubclass(Rectangle, Base))'''
-
     def test_arectangle_id(self):
         """Test the id for Rectangle"""
         rect = Rectangle(1, 3, 0, 0, 199)
@@ -25,14 +21,10 @@ class test_rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle("1", 5)
 
-
-
     def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            rect = Rectangle(-4, 5)
-
-
+            Rectangle(-4, 5)
 
     def test_str_overload(self):
         r = Rectangle(5, 10, 8, 7, 88)
@@ -47,8 +39,7 @@ class test_rectangle(unittest.TestCase):
         """Testing the dict that will be printed"""
         r1 = Rectangle(5, 4, 0, 0, 400)
         r1_dict = r1.to_dictionary()
-        self.assertEqual(r1_dict,
-        {"width": 5, "height": 4, "x": 0, "y": 0, "id": 400})
+        self.assertEqual(r1_dict, {"width": 5, "height": 4, "x": 0, "y": 0, "id": 400})
 
     def test_missing_height(self):
         """Expecting a type error because height and width are missing"""
@@ -85,7 +76,7 @@ class test_rectangle(unittest.TestCase):
             os.remove("Rectangle.json")
         except:
             pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
+        Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             content = file.read()
@@ -97,7 +88,7 @@ class test_rectangle(unittest.TestCase):
             os.remove("Rectangle.json")
         except:
             pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
+        Rectangle(5, 10, 0, 0, 346)
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             content = file.read()
