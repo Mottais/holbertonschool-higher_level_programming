@@ -29,7 +29,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(-4)
         with self.assertRaises(ValueError):
-            sq = Square(4, -3)
+            sq = Square(-4, -3)
         with self.assertRaises(ValueError):
             sq = Square(4, 2, -3)
         with self.assertRaises(ValueError):
