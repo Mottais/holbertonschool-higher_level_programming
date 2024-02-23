@@ -18,30 +18,30 @@ class test_square(unittest.TestCase):
     def test_02_init_TypeError(self):
         """Creating a Square object with a TypeError"""
         with self.assertRaises(TypeError):
-            sq = Square([1, 2])
+            Square([1, 2])
         with self.assertRaises(TypeError):
-            sq = Square(1, (2,))
+            Square(1, (2,))
         with self.assertRaises(TypeError):
             Square(1, 2, "3")
 
     def test_03_init_ValueError(self):
         """Creating a Square object with a ValueError"""
         with self.assertRaises(ValueError):
-            sq = Square(-1)
+            Square(-1)
         with self.assertRaises(ValueError):
-            sq = Square(1, -2)
+            Square(1, -2)
         with self.assertRaises(ValueError):
-            sq = Square(1, 2, -3)
+            Square(1, 2, -3)
         with self.assertRaises(ValueError):
-            sq = Square(0)
+            Square(0)
 
     def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Square.json")
-        except:
+        except FileNotFoundError:
             pass
-        r1 = Square(5, 0, 0, 346)
+
         Square.save_to_file(None)
 
         with open("Square.json", "r") as file:
