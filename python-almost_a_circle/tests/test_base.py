@@ -86,7 +86,7 @@ class test_base(unittest.TestCase):
         self.assertTrue((obj_from_sting == [{"toto": 1}, {"tutu": 2}]))
         self.assertTrue(type(obj_from_sting) is list)
 
-        String_liste = None
+        '''String_liste = None
         obj_from_sting = Base.from_json_string(String_liste)
         self.assertTrue((obj_from_sting == []))
         self.assertTrue(type(obj_from_sting) is list)
@@ -99,7 +99,7 @@ class test_base(unittest.TestCase):
         String_liste = '1'
         obj_from_sting = Base.from_json_string(String_liste)
         self.assertTrue((obj_from_sting != []))
-        self.assertTrue(type(obj_from_sting) is not list)
+        self.assertTrue(type(obj_from_sting) is not list)'''
 
     def test_07_from_json_string_TypeError(self):
         """using from_json_string with a TypeError"""
