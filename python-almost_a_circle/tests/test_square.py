@@ -7,17 +7,16 @@ from io import StringIO
 """Runs test cases for the square module"""
 
 
-# OK ici
 class test_square(unittest.TestCase):
     """Testing square"""
 
-    def test_asquare_id(self):
-        """Test the id for square"""
+    def test_01_init_(self):
+        """Testing _init"""
         sq = Square(2, 0, 0, 199)
         self.assertTrue(199 == sq.id)
 
-    def test_width_string(self):
-        """Testing for other than int"""
+    def test_02_init_TypeError(self):
+        """Creating a Square object with a TypeError"""
         with self.assertRaises(TypeError):
             sq = Square([1, 2])
         with self.assertRaises(TypeError):
@@ -25,8 +24,8 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, 2, "3")
 
-    def test_width_negative(self):
-        """Testing with negative int"""
+    def test_03_init_ValueError(self):
+        """Creating a Square object with a ValueError"""
         with self.assertRaises(ValueError):
             sq = Square(-1)
         with self.assertRaises(ValueError):
