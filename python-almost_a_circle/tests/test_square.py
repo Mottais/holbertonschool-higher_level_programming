@@ -111,7 +111,7 @@ class test_square(unittest.TestCase):
         output = "###\n###\n###\n"
         self.assertEqual(capturedOutput.getvalue(), output)
 
-       def test_saving_to_file_empty_list(self):
+    def test_saving_to_file_empty_list(self):
         """Test saving a file into JSON format with an empty list"""
         try:
             os.remove("Square.json")
