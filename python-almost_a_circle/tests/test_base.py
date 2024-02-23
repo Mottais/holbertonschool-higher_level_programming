@@ -136,10 +136,11 @@ class test_base(unittest.TestCase):
             self.assertTrue((file.read()) == "[]")'''
 
         """POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???"""
-        '''try:
+        """POURQOUI FAUT-IL SUPPR 'Square.json' avant ave_to_file ???"""
+        try:
             os.remove("Square.json")
         except Exception:
-            pass'''
+            pass
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertTrue((file.read()) == "[]")
