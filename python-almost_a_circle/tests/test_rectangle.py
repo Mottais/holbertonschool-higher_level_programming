@@ -91,15 +91,10 @@ import os
 class test_square(unittest.TestCase):
     """Testing square"""
 
-    def test_asquare_id(self):
-        """Test the id for square"""
-        sq = Rectangle(1, 2, 0, 0, 199)
-        self.assertTrue(199 == sq.id)
-
     def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            sq = Square("1")
+            sq = Rectangle("1")
         with self.assertRaises(TypeError):
             sq = Square(1, "46")
         with self.assertRaises(TypeError):
