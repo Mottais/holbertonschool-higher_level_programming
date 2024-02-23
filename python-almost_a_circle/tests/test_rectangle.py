@@ -41,21 +41,29 @@ class test_rectangle(unittest.TestCase):
     def test_05_area(self):
         """Testing area"""
         r1 = Rectangle(3, 2)
-        self.assertEqual(r1.area(), 6)  # 3 * 2 = 6 (width * height)
+        self.assertTrue(r1.area() == 6)
 
     def test_06_display(self):
         """Testing display"""
         r1 = Rectangle(2, 3)
+
+        # objet StringIO, qui est essentiellement un fichier
+        # en mémoire utilisé pour capturer la sortie standard.
         output = StringIO()
+
+        # redirige la sortie standard (stdout) vers l'objet output,de sorte
+        # que toute sortie imprimée avec print sera capturée par cet objet.
         sys.stdout = output
         r1.display()
+
+        # réinitialise la sortie standard à sa valeur par défaut.
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "##\n##\n##\n")
+        self.assertEqual(output.getvalue(), "##\n" * 3)
 
     def test_07_str(self):
         """Testing __str__"""
         r1 = Rectangle(4, 6, 2, 1, 12)
-        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+        self.assertTrue(str(r1) == "[Rectangle] (12) 2/1 - 4/6")
 
     def test_08_update(self):
         """Testing update"""
