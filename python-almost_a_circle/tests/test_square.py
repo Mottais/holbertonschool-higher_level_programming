@@ -30,15 +30,15 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, 7, "46")
 
-    '''def test_width_negative(self):
+    def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            sq = Square(-4)'''
+            sq = Square(-4)
 
-    def test_x_negative(self):
+    '''def test_x_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            sq = Square(4, -3)
+            sq = Square(4, -3)'''
 
     def test_y_negative(self):
         """Testing with negative int"""
