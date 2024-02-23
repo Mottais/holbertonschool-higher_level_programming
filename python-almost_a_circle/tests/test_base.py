@@ -135,6 +135,10 @@ class test_base(unittest.TestCase):
             self.assertTrue((file.read()) == "[]")'''
 
         Square.save_to_file([])
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
         with open("Square.json", "r") as file:
             self.assertTrue((file.read()) == "[]")
 
