@@ -45,7 +45,7 @@ class test_base(unittest.TestCase):
         with self.assertRaises(TypeError):
             b = Base(1, 1)
             print(b)
-    '''AVEC CE TEST AUCUN 'CHECKER' NE PASSE ???'''
+    # AVEC CE TEST AUCUN 'CHECKER' NE PASSE ???
     '''def test_init_ValueError(self):
         """Creating a Base object with a TypeError"""
         with self.assertRaises(ValueError):
@@ -121,7 +121,7 @@ class test_base(unittest.TestCase):
         with open("Base.json", "r") as file:
             self.assertTrue((file.read()) == "[]")
 
-        """POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???"""
+        # POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertTrue(file.read() == "[]")
@@ -135,8 +135,8 @@ class test_base(unittest.TestCase):
         with open("Base.json", "r") as file:
             self.assertTrue((file.read()) == "[]")'''
 
-        """POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???"""
-        """POURQOUI FAUT-IL SUPPR 'Square.json' avant ave_to_file ???"""
+        # POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???
+        # POURQOUI FAUT-IL SUPPR 'Square.json' avant ave_to_file ???
         try:
             os.remove("Square.json")
         except Exception:
