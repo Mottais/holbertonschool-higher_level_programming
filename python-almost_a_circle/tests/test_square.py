@@ -59,10 +59,10 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(5, 1.07)'''
 
-    '''def test_y_float(self):
+    def test_y_float(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
-            sq = Square(5, 8, 1.07)'''
+            sq = Square(5, 8, 1.07)
 
     def test_str_overload(self):
         s = Square(5, 8, 7, 88)
