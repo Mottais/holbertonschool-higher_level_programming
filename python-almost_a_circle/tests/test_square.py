@@ -4,11 +4,11 @@ import sys
 from models.square import Square
 from models.base import Base
 from io import StringIO
-"""Runs test cases for the Rectangle module"""
+"""Runs test cases for the square module"""
 
 
-class test_rectangle(unittest.TestCase):
-    """Testing rectangle"""
+class test_square(unittest.TestCase):
+    """Testing square"""
     def test_01_init_(self):
         """Testing _init"""
         Base._Base__nb_objects = 0
