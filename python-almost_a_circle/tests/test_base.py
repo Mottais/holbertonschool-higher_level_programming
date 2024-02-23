@@ -132,8 +132,10 @@ class test_base(unittest.TestCase):
             self.assertTrue(file.read() == "[]")
 
         """Test saving a file into JSON format with an empty list"""
-
-
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
         Square.save_to_file([])
         self.assertTrue(os.path.exists("Square.json"))
 
