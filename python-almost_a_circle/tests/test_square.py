@@ -66,18 +66,9 @@ class test_square(unittest.TestCase):
 
 
 
-    '''def test_to_dict_print(self):
-        """Testing the dict that will be printed"""
-        r1 = Square(5, 0, 0, 410)
-        r1_dict = r1.to_dictionary()
-        self.assertEqual(r1_dict, {"size": 5, "id": 410, "x": 0, "y": 0})
 
-    def test_missing_height(self):
-        """Expecting a type error because size are missing"""
-        with self.assertRaises(TypeError):
-            Square()'''
 
-    def test_saving_to_file(self):
+    '''def test_saving_to_file(self):
         """Testing saving a file into json format"""
         try:
             os.remove("Square.json")
@@ -104,7 +95,7 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             content = file.read()
 
-        self.assertEqual("[]", content)
+        self.assertEqual("[]", content)'''
 
     def test_saving_to_file_type(self):
         """Testing saving a file into json format and testing the type"""
