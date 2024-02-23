@@ -3,13 +3,17 @@ import unittest
 import os
 import json
 import sys
-from models.rectangle import Rectangle
+from models.rectangle import Rectangle, Base
 from io import StringIO
 """Runs test cases for the Rectangle module"""
 
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
+
+    '''def test_rectangle_inherits_from_base(self):
+        """ Testing inheritance """
+        self.assertTrue(issubclass(Rectangle, Base))'''
 
     def test_arectangle_id(self):
         """Test the id for Rectangle"""
@@ -21,10 +25,14 @@ class test_rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rect = Rectangle("1", 5)
 
+
+
     def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
             rect = Rectangle(-4, 5)
+
+
 
     def test_str_overload(self):
         r = Rectangle(5, 10, 8, 7, 88)
