@@ -212,8 +212,8 @@ class test_base(unittest.TestCase):
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
         # POURQUOI CE TEST NE PASSE PAS EN TESTANT: type is Square???
-        self.assertTrue(type(list_squares_output[0]) is Square)
-        '''self.assertTrue(sq.y == list_squares_output[0].y)'''
+        '''self.assertTrue(type(list_squares_output[0]) is Square)'''
+        self.assertTrue(sq.y == list_squares_output[0].y)
 
 
 if __name__ == '__main__':
