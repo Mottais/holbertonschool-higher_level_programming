@@ -44,10 +44,10 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(4, 2, -3)
 
-    '''def test_width_zero(self):
+    def test_width_zero(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            sq = Square(0, 5)'''
+            sq = Square(0, 5)
 
     def test_width_float(self):
         """Testing for other than int"""
