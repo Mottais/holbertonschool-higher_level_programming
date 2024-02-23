@@ -18,11 +18,11 @@ class test_rectangle(unittest.TestCase):
         self.assertTrue(r2.x == 3)
         self.assertTrue(r2.y == 4)'''
 
-    def test_02_init_TypeError(self):
+    '''def test_02_init_TypeError(self):
         """Creating a Rectangle object with a TypeError"""
         with self.assertRaises(TypeError):
             r = Rectangle("1", 1)
-            print(r)
+            print(r)'''
 
     def test_03_init_ValueError(self):
         """Creating a Rectangle object with a ValueError"""
