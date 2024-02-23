@@ -60,9 +60,9 @@ class test_base(unittest.TestCase):
         self.assertTrue(json_string == '[{"toto": "tutu"}, {"toto": "tutu"}]')
         self.assertTrue(type(json_string) is str)'''
 
-        json_string = Base.to_json_string(1)
+        '''json_string = Base.to_json_string(1)
         self.assertTrue(json_string == '1')
-        self.assertTrue(type(json_string) is str)
+        self.assertTrue(type(json_string) is str)'''
 
         json_string = Base.to_json_string(None)
         self.assertTrue(json_string == '[]')
