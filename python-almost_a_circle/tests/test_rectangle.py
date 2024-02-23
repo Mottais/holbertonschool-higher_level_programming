@@ -93,7 +93,7 @@ class test_square(unittest.TestCase):
 
     def test_asquare_id(self):
         """Test the id for square"""
-        sq = Rectangle(2, 0, 0, 199)
+        sq = Rectangle(1, 2, 0, 0, 199)
         self.assertTrue(199 == sq.id)
 
     def test_width_string(self):
