@@ -31,13 +31,13 @@ class test_square(unittest.TestCase):
             Square(1, -2)
         with self.assertRaises(ValueError):
             Square(1, 2, -3)
-        '''POURQUOI IL FAUT FAIRE UN TEST A '0' ALORS QUE
-        C'EST LE MEME CAS QU'UN NOMBRE NEGATIF ????'''
+        # POURQUOI IL FAUT FAIRE UN TEST A '0' ALORS QUE
+        # C'EST LE MEME CAS QU'UN NOMBRE NEGATIF ????'''
         with self.assertRaises(ValueError):
             Square(0)
 
-    '''PORQUOI CE TEST DOIT ETRE FAIT SUR UN CARRE ET NON
-    PAS SUR UN RECTANGLE POUR PASSER LE 'CHECKER' ???'''
+    # POURQUOI CE TEST DOIT ETRE FAIT SUR UN CARRE ET NON
+    # PAS SUR UN RECTANGLE POUR PASSER LE 'CHECKER' ???'''
     def test_display_square_size_zero(self):
         """Checking the stdout output by capturing it"""
         capturedOutput = StringIO()

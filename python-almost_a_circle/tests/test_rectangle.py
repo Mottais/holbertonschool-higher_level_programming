@@ -10,7 +10,8 @@ from io import StringIO
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
-    ''' PAS NECESSAIRE POUR LE CHECKER
+    # PAS NECESSAIRE POUR LE CHECKER ???
+    '''
     def test_01_init_(self):
         """Testing _init"""
         Base._Base__nb_objects = 0
