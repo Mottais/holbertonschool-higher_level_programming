@@ -91,15 +91,6 @@ import os
 class test_square(unittest.TestCase):
     """Testing square"""
 
-    def test_width_string(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            sq = Rectangle("1")
-        with self.assertRaises(TypeError):
-            sq = Square(1, "46")
-        with self.assertRaises(TypeError):
-            sq = Square(1, 7, "46")
-
     def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):

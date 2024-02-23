@@ -15,7 +15,7 @@ class test_square(unittest.TestCase):
         sq = Square(2, 0, 0, 199)
         self.assertTrue(199 == sq.id)
 
-    '''def test_width_string(self):
+    def test_width_string(self):
         """Testing for other than int"""
         with self.assertRaises(TypeError):
             sq = Square("1")
@@ -24,7 +24,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, 7, "46")
 
-    def test_width_negative(self):
+    '''def test_width_negative(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
             sq = Square(-4)
