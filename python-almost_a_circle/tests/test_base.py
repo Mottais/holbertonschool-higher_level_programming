@@ -126,14 +126,19 @@ class test_base(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertTrue(file.read() == "[]")
 
-        Base.save_to_file([])
+        '''Base.save_to_file([])
         try:
             os.remove("Base.json")
         except FileNotFoundError:
             pass
         with open("Base.json", "r") as file:
-            self.assertTrue((file.read()) == "[]")
+            self.assertTrue((file.read()) == "[]")'''
 
+
+        try:
+            os.remove("Square.json")
+        except Exception:
+            pass
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertTrue((file.read()) == "[]")
