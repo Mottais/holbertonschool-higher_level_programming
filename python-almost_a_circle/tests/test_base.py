@@ -137,7 +137,7 @@ class test_base(unittest.TestCase):
         except FileNotFoundError:
             pass
         sq = Square(5, 0, 0, 346)
-        sq.save_to_file([])
+        Square.save_to_file([])
         self.assertTrue(os.path.exists("Square.json"))
 
     def test_09_create(self):
