@@ -119,17 +119,18 @@ class test_base(unittest.TestCase):
 
         Base.save_to_file(None)
         with open("Base.json", "r") as file:
-            File_contain = (file.read())
-            self.assertTrue(File_contain == "[]")
-
-        Base.save_to_file([])
-        with open("Base.json", "r") as file:
             self.assertTrue((file.read()) == "[]")
 
         """POURQOUI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???"""
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertTrue(file.read() == "[]")
+
+        Base.save_to_file([])
+        with open("Base.json", "r") as file:
+            self.assertTrue((file.read()) == "[]")
+
+
 
         """Test saving a file into JSON format with an empty list"""
         try:
