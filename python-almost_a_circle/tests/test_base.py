@@ -24,11 +24,11 @@ class test_base(unittest.TestCase):
         b = Base(4)
         self.assertTrue(b.id == 4)
         b = Base()
-        self.assertTrue(b.id == 4)'''
+        self.assertTrue(b.id == 4)
         b = Base(-20)
         self.assertTrue(b.id == -20)
         b = Base("Betty")
-        self.assertTrue(b.id == "Betty")
+        self.assertTrue(b.id == "Betty")'''
         b = Base([1, 2, 3])
         self.assertTrue([1, 2, 3] == b.id)
         b = Base({"id": 109})
