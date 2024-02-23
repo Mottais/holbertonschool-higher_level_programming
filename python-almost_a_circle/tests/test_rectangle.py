@@ -91,10 +91,10 @@ import os
 class test_square(unittest.TestCase):
     """Testing square"""
 
-    '''def test_asquare_id(self):
+    def test_asquare_id(self):
         """Test the id for square"""
-        sq = Square(2, 0, 0, 199)
-        self.assertTrue(199 == sq.id)'''
+        sq = Rectangle(2, 0, 0, 199)
+        self.assertTrue(199 == sq.id)
 
     def test_width_string(self):
         """Testing for other than int"""
