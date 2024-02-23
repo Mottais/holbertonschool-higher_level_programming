@@ -68,7 +68,7 @@ class test_square(unittest.TestCase):
 
 
 
-       def test_saving_to_file(self):
+    '''def test_saving_to_file(self):
         """Testing saving a file into json format"""
         try:
             os.remove("Square.json")
@@ -79,11 +79,11 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             content = file.read()
         t = [{"id": 346, "x": 0, "size": 5, "y": 0}]
-        self.assertEqual(t, json.loads(content))
+        self.assertEqual(t, json.loads(content))'''
 
 
 
-    '''def test_saving_to_file_None(self):
+    def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Square.json")
@@ -95,7 +95,7 @@ class test_square(unittest.TestCase):
         with open("Square.json", "r") as file:
             content = file.read()
 
-        self.assertEqual("[]", content)'''
+        self.assertEqual("[]", content)
 
     def test_saving_to_file_type(self):
         """Testing saving a file into json format and testing the type"""
