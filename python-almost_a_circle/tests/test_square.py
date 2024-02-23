@@ -22,7 +22,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, (2,))
         with self.assertRaises(TypeError):
-            sq = Square(1, 2, "3")
+            Square(1, 2, "3")
 
     def test_03_init_ValueError(self):
         """Creating a Square object with a ValueError"""
