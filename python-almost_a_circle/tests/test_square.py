@@ -44,11 +44,11 @@ class test_square(unittest.TestCase):
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the
         list and has the same y"""
+        with open("Square.json", "w") as file:
+            file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')
         sq = Square(1, 2, 3)
         list_squares_input = [sq]
         Square.save_to_file(list_squares_input)
-        with open("Square.json", "w") as file:
-            file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')
         list_squares_output = Square.load_from_file()
         self.assertTrue(type(list_squares_output[0]) is type(sq))
         self.assertTrue(sq.y == list_squares_output[0].y)
