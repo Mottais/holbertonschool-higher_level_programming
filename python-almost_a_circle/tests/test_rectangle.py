@@ -10,206 +10,108 @@ from io import StringIO
 
 class test_rectangle(unittest.TestCase):
     """Testing rectangle"""
+    def test_00_id(self):
+        """Testing id"""
+        Base._Base__nb_objects = 0
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(2, 10)
+        r3 = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r1.id, 1)
+        self.assertEqual(r2.id, 2)
+        self.assertEqual(r3.id, 12)
 
-    def test_arectangle_id(self):
-        """Test the id for Rectangle"""
-        rect = Rectangle(1, 3, 0, 0, 199)
-        self.assertEqual(199, rect.id)
+    def test_01_width(self):
+        """Testing width"""
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.width, 10)
 
-    def test_width_string(self):
-        """Testing for other than int"""
-        with self.assertRaises(TypeError):
-            Rectangle("1", 5)
+    def test_02_height(self):
+        """Testing height"""
+        r1 = Rectangle(10, 2)
+        self.assertEqual(r1.height, 2)
 
-    def test_width_negative(self):
-        """Testing with negative int"""
-        with self.assertRaises(ValueError):
-            Rectangle(-4, 5)
+    def test_03_x(self):
+        """Testing x"""
+        r1 = Rectangle(10, 2, 3)
+        self.assertEqual(r1.x, 3)
 
-    def test_str_overload(self):
-        r = Rectangle(5, 10, 8, 7, 88)
-        self.assertEqual(str(r), "[Rectangle] (88) 8/7 - 5/10")
+    def test_04_y(self):
+        """Testing y"""
+        r1 = Rectangle(10, 2, 3, 4)
+        self.assertEqual(r1.y, 4)
 
-    def test_to_dict(self):
-        """Testing the type that is returned from the to_dictionary method"""
-        r1 = Rectangle(5, 4)
-        self.assertEqual(type(r1.to_dictionary()), dict)
+    def test_05_area(self):
+        """Testing area"""
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)  # 3 * 2 = 6 (width * height)
 
-    def test_to_dict_print(self):
-        """Testing the dict that will be printed"""
-        r1 = Rectangle(5, 4, 0, 0, 400)
-        r1_dict = r1.to_dictionary()
-        self.assertEqual(r1_dict, {"width": 5, "height": 4, "x": 0, "y": 0, "id": 400})
+    def test_06_display(self):
+        """Testing display"""
+        r1 = Rectangle(2, 3)
+        output = StringIO()
+        sys.stdout = output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), "##\n##\n##\n")
 
-    def test_missing_height(self):
-        """Expecting a type error because height and width are missing"""
-        with self.assertRaises(TypeError):
-            Rectangle()
+    def test_07_str(self):
+        """Testing __str__"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
 
-    def test_missing_width(self):
-        """Expecting an error because width is missing"""
-        with self.assertRaises(TypeError):
-            Rectangle(1)
+    def test_08_update(self):
+        """Testing update"""
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(89)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(89, 2)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/10")
+        r1.update(89, 2, 3)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 10/10 - 2/3")
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/10 - 2/3")
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
+        r1.update(89, 2, 3, 4, 5, 6)
+        self.assertEqual(r1.__str__(), "[Rectangle] (89) 4/5 - 2/3")
 
-    def test_str_representation(self):
-        """ Testing string rep """
-        rect = Rectangle(5, 4, 1, 2, 42)
-        expected_str = "[Rectangle] (42) 1/2 - 5/4"
-        self.assertEqual(str(rect), expected_str)
 
-    def test_saving_to_file(self):
-        """Testing saving a file into json format"""
-        try:
-            os.remove("Rectangle.json")
-        except Exception:
-            pass
-        r1 = Rectangle(5, 10, 0, 0, 346)
-        Rectangle.save_to_file([r1])
+    def test_11_save_to_file(self): # 14
+        """Testing save_to_file"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
-            content = file.read()
-        t = [{"width": 5, "height": 10, "x": 0, "y": 0, "id": 346}]
-        self.assertEqual(t, json.loads(content))
+            self.assertEqual(json.loads(file.read()), [r1.to_dictionary(),
+                                                       r2.to_dictionary()])
 
-    def test_saving_to_file_None(self):
-        """Testing saving a file into json format sending None"""
-        try:
-            os.remove("Rectangle.json")
-        except Exception:
-            pass
-        Rectangle(5, 10, 0, 0, 346)
+    def test_14_save_to_file_None(self): # 18
+        """Testing save_to_file None"""
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
-            content = file.read()
-        self.assertEqual("[]", content)
+            self.assertEqual(file.read(), "[]")
 
-    def test_saving_to_file_type(self):
-        """Testing saving a file into json format sending None"""
-        try:
-            os.remove("Rectangle.json")
-        except Exception:
-            pass
-        Rectangle(5, 10, 0, 0, 346)
-        Rectangle.save_to_file(None)
+    def test_15_load_from_file_None(self): # 19
+        """Testing load_from_file None"""
+        list_output = Rectangle.load_from_file()
+        self.assertEqual(list_output, [])
+
+    def test_16_save_to_file_empty(self): # 20
+        """Testing save_to_file empty"""
+        Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
-            content = file.read()
-        self.assertEqual(str, type(content))
-        try:
-            os.remove("Rectangle.json")
-        except Exception:
-            pass
+            self.assertEqual(file.read(), "[]")
 
-    def test_json_string_type(self):
-        """Testing the returned type"""
-        list_input = [
-            {"id": 2089, "width": 10, "height": 4},
-            {"id": 2712, "width": 1, "height": 7},
-        ]
-        json_list_input = Rectangle.to_json_string(list_input)
-        list_output = Rectangle.from_json_string(json_list_input)
-        self.assertEqual(type(list_output), list)
+    def test_17_load_from_file_empty(self): # 21
+        """Testing load_from_file empty"""
+        list_output = Rectangle.load_from_file()
+        self.assertEqual(list_output, [])
 
-    def test_json_string(self):
-        """Testing that the json string gets converted into a list"""
-        list_input = [
-            {"id": 2089, "width": 10, "height": 4},
-            {"id": 2712, "width": 1, "height": 7},
-        ]
-        json_list_input = Rectangle.to_json_string(list_input)
-        list_output = Rectangle.from_json_string(json_list_input)
-        s1 = {"id": 2089, "width": 10, "height": 4}
-        s2 = {"height": 7, "id": 2712, "width": 1}
-        self.assertEqual(list_output[0], s1)
-        self.assertEqual(list_output[1], s2)
-
-    def test_dict_to_instance(self):
-        """test that an instance is created from a dict"""
-        r1 = Rectangle(5, 8, 3)
-        r1_dictionary = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_dictionary)
-        self.assertNotEqual(r1, r2)
-
-    def test_isnot_dict_to_instance(self):
-        """test that an instance is created from a dict"""
-        r1 = Rectangle(109, 80, 76)
-        r1_dictionary = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_dictionary)
-        self.assertIsNot(r1, r2)
-
-    def test_load_from_file_not_the_same(self):
-        """Checking that an object was created from the
-        list but has a different adress."""
-        r1 = Rectangle(10, 7, 2, 8)
-        list_rectangles_input = [r1]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertNotEqual(id(r1), id(list_rectangles_output[0]))
-
-    def test_load_from_file_same_width(self):
-        """Checking that an object was created from the
-        list and has the same witdh"""
-        r1 = Rectangle(10, 7, 2, 8)
-        list_rectangles_input = [r1]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(r1.width, list_rectangles_output[0].width)
-
-    def test_load_from_file_same_height(self):
-        """Checking that an object was created from the
-        list and has the same height"""
-        r1 = Rectangle(10, 7, 2, 8)
-        list_rectangles_input = [r1]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(r1.height, list_rectangles_output[0].height)
-
-    def test_load_from_file_same_x(self):
-        """Checking that an object was created from the
-        list and has the same x"""
-        r1 = Rectangle(10, 7, 2, 8)
-        list_rectangles_input = [r1]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(r1.x, list_rectangles_output[0].x)
-
-    def test_load_from_file_same_y(self):
-        """Checking that an object was created from the
-        list and has the same y"""
-        r1 = Rectangle(10, 7, 2, 8)
-        list_rectangles_input = [r1]
-        Rectangle.save_to_file(list_rectangles_input)
-        list_rectangles_output = Rectangle.load_from_file()
-        self.assertEqual(r1.y, list_rectangles_output[0].y)
-
-    def test_display_square(self):
-        """Checking the stdout output by capturing it"""
-        capturedOutput = StringIO()
-        sys.stdout = capturedOutput
-        r1 = Rectangle(10, 3)
-        r1.display()
-        sys.stdout = sys.__stdout__
-        output = "##########\n" + "##########\n" + "##########\n"
-        self.assertEqual(capturedOutput.getvalue(), output)
-
-    def test_display_square_size_one(self):
-        """Checking the stdout output by capturing it"""
-        capturedOutput = StringIO()
-        sys.stdout = capturedOutput
-        r1 = Rectangle(1, 2)
-        r1.display()
-        sys.stdout = sys.__stdout__
-
-        output = "#\n#\n"
-        self.assertEqual(capturedOutput.getvalue(), output)
-
-    def test_display_square_size_zero(self):
-        """Checking the stdout output by capturing it"""
-        capturedOutput = StringIO()
-        sys.stdout = capturedOutput
-        r1 = Rectangle(3, 7)
-        r1.display()
-        sys.stdout = sys.__stdout__
-        output = "###\n###\n###\n###\n###\n###\n###\n"
-        self.assertEqual(capturedOutput.getvalue(), output)
+    def test_19_load_from_file_no_file(self): # 23
+        """Testing load_from_file no file"""
+        os.remove("Rectangle.json")
+        list_output = Rectangle.load_from_file()
+        self.assertEqual(list_output, [])
 
     if __name__ == '__main__':
         unittest.main()
