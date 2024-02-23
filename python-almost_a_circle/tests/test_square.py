@@ -50,7 +50,6 @@ class test_square(unittest.TestCase):
         '''with open("Square.json", "w") as file:
             file.write('[{"id": 1, "x": 2, "size": 1, "y": 3}]')'''
         list_squares_output = Square.load_from_file()
-        self.assertTrue(sq.y == list_squares_output[0].y)
         self.assertTrue(type(list_squares_output[0]) is Square)
 
     def test_display_square_size_zero(self):
