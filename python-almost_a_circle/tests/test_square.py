@@ -35,7 +35,7 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(0)
 
-    '''def test_saving_to_file_None(self):
+    def test_saving_to_file_None(self):
         """Testing saving a file into json format sending None"""
         try:
             os.remove("Square.json")
@@ -79,7 +79,7 @@ class test_square(unittest.TestCase):
         # Call the save_to_file method with an empty list
         square.save_to_file([])
         # You can add assertions to verify the test's success, for example, checking if the file exists
-        self.assertTrue(os.path.exists("Square.json"))'''
+        self.assertTrue(os.path.exists("Square.json"))
 
     if __name__ == '__main__':
         unittest.main()
