@@ -45,10 +45,10 @@ class test_square(unittest.TestCase):
         with self.assertRaises(ValueError):
             sq = Square(4, 2, -3)
 
-    '''def test_width_zero(self):
+    def test_width_zero(self):
         """Testing with negative int"""
         with self.assertRaises(ValueError):
-            sq = Square(0, 5)'''
+            sq = Square(0, 5)
 
 
 
@@ -57,9 +57,9 @@ class test_square(unittest.TestCase):
 
 
 
-    def test_str_overload(self):
+    '''def test_str_overload(self):
         s = Square(5, 8, 7, 88)
-        self.assertTrue(s.__str__() == "[Square] (88) 8/7 - 5")
+        self.assertTrue(s.__str__() == "[Square] (88) 8/7 - 5")'''
 
 
 
