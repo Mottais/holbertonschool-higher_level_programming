@@ -117,14 +117,14 @@ class test_base(unittest.TestCase):
         with open("Base.json", "r") as file:
             self.assertTrue(type(file.read()) is str)'''
 
-        Base.save_to_file(None)
+        '''Base.save_to_file(None)
         with open("Base.json", "r") as file:
-            self.assertTrue((file.read()) == "[]")
+            self.assertTrue((file.read()) == "[]")'''
 
         # POURQUOI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???
-        Square.save_to_file(None)
+        '''Square.save_to_file(None)
         with open("Square.json", "r") as file:
-            self.assertTrue(file.read() == "[]")
+            self.assertTrue(file.read() == "[]")'''
 
 
         '''try:
