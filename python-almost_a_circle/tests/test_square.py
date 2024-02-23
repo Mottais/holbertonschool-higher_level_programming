@@ -31,6 +31,8 @@ class test_square(unittest.TestCase):
             Square(1, -2)
         with self.assertRaises(ValueError):
             Square(1, 2, -3)
+        '''POURQUOI IL FAUT FAIRE UN TEST A '0' ALORS QUE
+        C'EST LE MEME CAS QU'UN NOMBRE NEGATIF ????'''
         with self.assertRaises(ValueError):
             Square(0)
 
