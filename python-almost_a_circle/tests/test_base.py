@@ -55,22 +55,22 @@ class test_base(unittest.TestCase):
     def test_04_to_json_string(self):
         """Testing the json string"""
 
-        '''Dict = {"toto": "tutu"}
+        Dict = {"toto": "tutu"}
         json_string = Base.to_json_string([Dict, Dict])
         self.assertTrue(json_string == '[{"toto": "tutu"}, {"toto": "tutu"}]')
-        self.assertTrue(type(json_string) is str)'''
+        self.assertTrue(type(json_string) is str)
 
-        '''json_string = Base.to_json_string(1)
+        json_string = Base.to_json_string(1)
         self.assertTrue(json_string == '1')
-        self.assertTrue(type(json_string) is str)'''
+        self.assertTrue(type(json_string) is str)
 
-        '''json_string = Base.to_json_string(None)
+        json_string = Base.to_json_string(None)
         self.assertTrue(json_string == '[]')
         self.assertTrue(type(json_string) is str)
 
         json_string = Base.to_json_string([])
         self.assertTrue(json_string == '[]')
-        self.assertTrue(type(json_string) is str)'''
+        self.assertTrue(type(json_string) is str)
 
     def test_05_to_json_string_TypeError(self):
         """using to_json_string with a TypeError"""
