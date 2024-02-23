@@ -124,8 +124,21 @@ class test_base(unittest.TestCase):
 
         Base.save_to_file([])
         with open("Base.json", "r") as file:
-            File_contain = (file.read())
-            self.assertTrue(File_contain == "[]")
+            self.assertTrue((file.read()) == "[]")
+
+        """POURQOUI CE MEME TEST SUR 'Base' NE SUFFIT PAS AU 'CHECKER' ???"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertTrue(file.read() == "[]")
+
+        """Test saving a file into JSON format with an empty list"""
+        try:
+            os.remove("Square.json")
+        except FileNotFoundError:
+            pass
+        sq = Square(5, 0, 0, 346)
+        sq.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
 
     def test_09_create(self):
         """Testing create"""
@@ -181,21 +194,7 @@ class test_base(unittest.TestCase):
         list_rectangles_output = Square.load_from_file()
         self.assertTrue(isinstance(list_rectangles_output[0], Square))
 
-    def test_saving_to_file_None(self):
-        """Testing saving a file into json format sending None"""
-        Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            self.assertTrue(file.read() == "[]")
 
-    def test_saving_to_file_empty_list(self):
-        """Test saving a file into JSON format with an empty list"""
-        try:
-            os.remove("Square.json")
-        except FileNotFoundError:
-            pass
-        sq = Square(5, 0, 0, 346)
-        sq.save_to_file([])
-        self.assertTrue(os.path.exists("Square.json"))
 
     def test_load_from_file_same_y(self):
         """Checking that an object was created from the list"""
