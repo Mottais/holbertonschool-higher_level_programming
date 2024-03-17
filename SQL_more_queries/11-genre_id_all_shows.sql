@@ -1,4 +1,4 @@
--- liste toutes les émissions contenues dans hbtn_0d_tvshows qui ont au moins un genre lié
+-- liste toutes les émissions contenues dans hbtn_0d_tvshows
 SELECT title, genre_id
 FROM tv_shows
 LEFT JOIN tv_show_genres
