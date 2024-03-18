@@ -7,14 +7,10 @@ if __name__ == "__main__":
     connexion = MySQLdb.connect(
         host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
     )
-    curseur = connexion.cursor()
-    curseur.execute("""
-        SELECT * FROM states
-        WHERE name LIKE 'N%'
-        ORDER BY id;
-                    """)
-    rows = curseur.fetchall()
+    curs = connexion.cursor()
+    curs.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;""")
+    rows = curs.fetchall()
     for row in rows:
         print(row)
-    curseur.close()
+    curs.close()
     connexion.close()
