@@ -11,6 +11,7 @@ if __name__ == "__main__":
     curs.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;""")
     rows = curs.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     curs.close()
     connexion.close()
