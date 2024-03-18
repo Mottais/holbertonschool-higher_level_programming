@@ -12,7 +12,7 @@ class State(Base):
     """Classe State."""
     'nom de la table'
     __tablename__ = 'states'
-    
+
     'colonnes de la table'
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
