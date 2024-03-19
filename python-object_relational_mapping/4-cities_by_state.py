@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module listing all cities from the database"""
+"""Liste les villes et leur état
+   jointure de 2 tables"""
 import MySQLdb
 from sys import argv
 
