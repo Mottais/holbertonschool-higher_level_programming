@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""Supprime tous les États contenant la lettre 'a'
 """
 from sys import argv
 from model_state import Base, State
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = Session(engine)
     Query_state_contient_a = session\
         .query(State)\
-        .filter(State.name.like('%e%'))
+        .filter(State.name.like('%a%'))
 
     for state in Query_state_contient_a.all():
         session.delete(state)
