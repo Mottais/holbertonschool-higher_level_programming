@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""Change le nom d'un État qui a id = 2 à 'New Mexico'
 """
 from sys import argv
 from model_state import Base, State
