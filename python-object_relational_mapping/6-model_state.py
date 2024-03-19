@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""Utilisation le module SQLAlchemy
 """
 from sys import argv
 from model_state import Base, State
