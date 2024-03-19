@@ -15,12 +15,12 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    states = session\
+    states_with_a = session\
         .query(State)\
         .order_by(State.id)\
         .filter(State.name.like("%a%"))
 
-    for state in states:
+    for state in states_with_a:
         print("{}: {}".format(state.id, state.name))
 
     session.close()
