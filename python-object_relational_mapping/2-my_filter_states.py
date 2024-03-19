@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Module listing all states from the database"""
+"""Liste les états
+   dont le nom correspond à l'argument passé : argv[4]
+"""
 import MySQLdb
 from sys import argv
 
