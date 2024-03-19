@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""Liste de tous les États par ordre croissant de id
 """
 from sys import argv
 from model_state import Base, State
@@ -14,6 +14,9 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    for state in session.query(State).order_by(State.id).all():
+    for state in session\
+            .query(State)\
+            .order_by(State.id)\
+            .all():
         print("{}: {}".format(state.id, state.name))
     session.close()
