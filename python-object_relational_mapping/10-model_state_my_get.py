@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""imprime l'objet Id de State avec le nom passé en argument
+"""imprime l'Id de l'état passé en argument
 """
 from sys import argv
 from model_state import Base, State
@@ -14,12 +14,12 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    state = session\
+    state_cherché = session\
         .query(State)\
         .filter(State.name.like(argv[4]))
 
-    if state.count() > 0:
-        print(state[0].id)
+    if state_cherché.count() > 0:
+        print(state_cherché[0].id)
     else:
         print('Not found')
     session.close()
