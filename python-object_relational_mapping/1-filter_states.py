@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module listing all states from the database"""
+"""Liste tous les états dont le nom commence par N (N majuscule)"""
 import MySQLdb
 from sys import argv
 
