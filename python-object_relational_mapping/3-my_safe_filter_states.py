@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module listing all states from the database"""
+"""Eviter les injections SQL"""
 import MySQLdb
 from sys import argv
 
