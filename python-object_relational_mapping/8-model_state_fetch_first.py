@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Start link class to table in database
+"""Imprime le premier objet State (de la table states)
 """
 from sys import argv
 from model_state import Base, State
@@ -14,9 +14,12 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    state = session.query(State).order_by(State.id).first()
-    if state:
-        print("{}: {}".format(state.id, state.name))
+    state_furst_id = session\
+        .query(State)\
+        .order_by(State.id)\
+        .first()
+    if state_furst_id:
+        print("{}: {}".format(state_furst_id.id, state_furst_id.name))
     else:
         print('Nothing')
 
