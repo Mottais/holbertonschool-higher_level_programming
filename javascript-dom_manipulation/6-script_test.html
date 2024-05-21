@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>data Details</title>
+</head>
+<body>
+  <div id="data"></div>
+
+  <script>
+    fetch('https://swapi-api.hbtn.io/api/people/5/?format=json')
+      .then(response => response.json())
+      .then(datas => showdatas(datas));
+
+    function showdatas(datas) {
+      const dataDiv = document.querySelector('#data');
+      const ul = document.createElement('ul');
+
+      // Iterate over each key-value pair in the datas object
+      for (const [key, value] of Object.entries(datas)) {
+        const li = document.createElement('li');
+        li.textContent = `${key}: ${value}`;
+        ul.appendChild(li);
+      }
+
+      // Clear any existing content and append the new list
+      dataDiv.innerHTML = '';
+      dataDiv.appendChild(ul);
+    }
+  </script>
+</body>
+</html>
