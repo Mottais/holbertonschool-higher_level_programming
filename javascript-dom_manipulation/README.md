@@ -1,5 +1,3 @@
-# JavaScript DOM manipulation
-
 <h1>JavaScript DOM Manipulation</h1>
 
 <h2>Resources</h2>
